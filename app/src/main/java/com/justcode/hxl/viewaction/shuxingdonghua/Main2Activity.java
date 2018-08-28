@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -26,7 +27,7 @@ import com.justcode.hxl.viewaction.R;
 
 public class Main2Activity extends AppCompatActivity {
 
-    Button fangda, suoxiao, jianxian, jianyin, yidong, xuanzhuan, yidongjiajianxian, yidongjiaxuanzhuan, yidongjiafangdasuoxiao,zzhouxuanzhuan;
+    Button fangda, suoxiao, jianxian, jianyin, yidong, xuanzhuan, yidongjiajianxian, yidongjiaxuanzhuan, yidongjiafangdasuoxiao, zzhouxuanzhuan;
     ImageView iv;
 
     @Override
@@ -105,36 +106,61 @@ public class Main2Activity extends AppCompatActivity {
         view.startAnimation(animation);
     }
 
-    private void translateAndScale(View view) {
-        TranslateAnimation animation1 = new TranslateAnimation(Animation.ABSOLUTE, 0f, Animation.ABSOLUTE, 200f, Animation.ABSOLUTE, 0f, Animation.ABSOLUTE, 0f);
+    private void translateAndScale(final View view) {
+        TranslateAnimation animation1 = new TranslateAnimation(Animation.ABSOLUTE, 0f, Animation.ABSOLUTE, 100f, Animation.ABSOLUTE, 0f, Animation.ABSOLUTE, 0f);
         animation1.setDuration(2000);
-        animation1.setAnimationListener(listener);
+        animation1.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                view.setX(view.getX()+100f);
+                ScaleAnimation scaleAnimation = new ScaleAnimation(1f, 2f, 1f, 2f, view.getWidth() / 2+100f, view.getHeight() / 2);
+                scaleAnimation.setDuration(2000);
+                scaleAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        //加上这句话，可以保证其他动画效果不变
+                       // view.setX(view.getX()-100f);
+                    }
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+                scaleAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
+                scaleAnimation.setRepeatCount(0);
+                scaleAnimation.setRepeatMode(Animation.RESTART);
+                scaleAnimation.setFillAfter(true);
+                view.startAnimation(scaleAnimation);
+            }
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
         animation1.setInterpolator(new AccelerateInterpolator());
-        animation1.setRepeatCount(Animation.INFINITE);
+        animation1.setRepeatCount(0);
         animation1.setRepeatMode(Animation.RESTART);
-        animation1.setFillAfter(false);
+        animation1.setFillAfter(true);
+        view.startAnimation(animation1);
 
-        ScaleAnimation scaleAnimation = new ScaleAnimation(1f, 2f, 1f, 2f, view.getWidth() / 2, view.getHeight() / 2);
-        scaleAnimation.setDuration(2000);
-        scaleAnimation.setAnimationListener(listener);
-        scaleAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
-        scaleAnimation.setRepeatCount(Animation.INFINITE);
-        scaleAnimation.setRepeatMode(Animation.RESTART);
-        scaleAnimation.setFillAfter(false);
 
-        AnimationSet animationSet = new AnimationSet(false);
-        animationSet.addAnimation(animation1);
-        animationSet.addAnimation(scaleAnimation);
-        animationSet.setFillAfter(false);
-        view.startAnimation(animationSet);
     }
 
     private void translateAndRotate(View view) {
-        RotateAnimation animation1 = new RotateAnimation(0f, 359f, Animation.ABSOLUTE, view.getWidth()/2, Animation.ABSOLUTE, view.getHeight()/2);
+        RotateAnimation animation1 = new RotateAnimation(0f, 359f, Animation.ABSOLUTE, view.getWidth() / 2, Animation.ABSOLUTE, view.getHeight() / 2);
         animation1.setDuration(2000);
         animation1.setAnimationListener(listener);
         animation1.setInterpolator(new LinearInterpolator());
-        animation1.setRepeatCount(3);
+        animation1.setRepeatCount(0);
         animation1.setRepeatMode(Animation.RESTART);
         animation1.setFillAfter(false);
 
@@ -146,10 +172,19 @@ public class Main2Activity extends AppCompatActivity {
         animation2.setRepeatMode(Animation.RESTART);
         animation2.setFillAfter(true);
 
+        ScaleAnimation scaleAnimation = new ScaleAnimation(1f, 2f, 1f, 2f, view.getWidth() / 2, view.getHeight() / 2);
+        scaleAnimation.setDuration(2000);
+        scaleAnimation.setAnimationListener(listener);
+        scaleAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
+        scaleAnimation.setRepeatCount(0);
+        scaleAnimation.setRepeatMode(Animation.RESTART);
+        scaleAnimation.setFillAfter(false);
+
         AnimationSet animationSet = new AnimationSet(false);
         animationSet.addAnimation(animation1);
         animationSet.addAnimation(animation2);
-        animationSet.setFillAfter(true);
+        animationSet.addAnimation(scaleAnimation);
+        animationSet.setFillAfter(false);
         view.startAnimation(animationSet);
 
     }
@@ -180,18 +215,32 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     void rotateCenter(View view) {
-        RotateAnimation animation = new RotateAnimation(0f, 359f, Animation.ABSOLUTE, view.getWidth()/2, Animation.ABSOLUTE, view.getHeight()/2);
+        RotateAnimation animation = new RotateAnimation(0f,
+                -359f,
+                Animation.ABSOLUTE, view.getWidth() / 2,
+                Animation.ABSOLUTE, view.getHeight() / 2);
         animation.setDuration(1000);
         animation.setAnimationListener(listener);
         animation.setInterpolator(new LinearInterpolator());
-        animation.setRepeatCount(3);
+        animation.setRepeatCount(0);
         animation.setRepeatMode(Animation.RESTART);
         animation.setFillAfter(false);
         view.startAnimation(animation);
+
+
     }
 
     private void translate(View view) {
-        TranslateAnimation animation = new TranslateAnimation(Animation.ABSOLUTE, 0f, Animation.ABSOLUTE, 200f, Animation.ABSOLUTE, 0f, Animation.ABSOLUTE, 0f);
+
+        //获取屏幕宽度的方法，百度就有
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        float width = dm.widthPixels;
+        float x = view.getX();
+        float translateX = width - x;
+        TranslateAnimation animation = new TranslateAnimation(Animation.ABSOLUTE, translateX,
+                Animation.ABSOLUTE, 0,
+                Animation.ABSOLUTE, 0f,
+                Animation.ABSOLUTE, 0f);
         animation.setDuration(2000);
         animation.setAnimationListener(listener);
         animation.setInterpolator(new AccelerateInterpolator());

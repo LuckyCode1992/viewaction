@@ -70,12 +70,12 @@
                 android:id="@+id/yidongjiaxuanzhuan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="移动加旋转" />
+                android:text="移动加放大缩小加旋转" />
             <Button
                 android:id="@+id/yidongjiafangdasuoxiao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="移动加放大缩小" />
+                android:text="先移动再缩放" />
             <Button
                 android:id="@+id/zzhouxuanzhuan"
                 android:layout_width="wrap_content"

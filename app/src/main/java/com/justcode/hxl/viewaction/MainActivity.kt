@@ -29,10 +29,11 @@ class MainActivity : AppCompatActivity() {
                     MotionEvent.ACTION_DOWN -> {
                         moveX = event.getX()
                         moveY = event.getY()
-
+                        Log.d("MainActivity_123","22222222")
 
                     }
                     MotionEvent.ACTION_MOVE -> {
+                        Log.d("MainActivity_123","ACTION_MOVE")
                         nowX = v?.x!! + (event.getX() - moveX)
                         nowY = v.y + (event.getY() - moveY)
                         v.translationX = nowX
