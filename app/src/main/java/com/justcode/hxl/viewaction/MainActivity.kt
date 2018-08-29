@@ -4,36 +4,45 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
+import android.view.VelocityTracker
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
+    var velocityTracker: VelocityTracker? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        velocityTracker = VelocityTracker.obtain()
         var moveX = 0.0f
         var moveY = 0.0f
         var nowX = 0.0f
         var nowY = 0.0f
 
         var viewX = view.x
-        var viewY=view.y
+        var viewY = view.y
 
         var oldX = iv.x
         var oldY = iv.y
+
         iv.setOnTouchListener(object : View.OnTouchListener {
+
             override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                velocityTracker?.addMovement(event)
+                velocityTracker?.computeCurrentVelocity(1000)
+
+                var xVelocity = velocityTracker?.xVelocity
+                var yVelocity = velocityTracker?.yVelocity
+                Log.d(" MainActivity_123","xVelocity:"+xVelocity+"--yVelocity:"+yVelocity)
                 when (event?.action) {
                     MotionEvent.ACTION_DOWN -> {
                         moveX = event.getX()
                         moveY = event.getY()
-                        Log.d("MainActivity_123","22222222")
+                       // Log.d("MainActivity_123", "22222222")
 
                     }
                     MotionEvent.ACTION_MOVE -> {
-                        Log.d("MainActivity_123","ACTION_MOVE")
+                       // Log.d("MainActivity_123", "ACTION_MOVE")
                         nowX = v?.x!! + (event.getX() - moveX)
                         nowY = v.y + (event.getY() - moveY)
                         v.translationX = nowX
@@ -41,11 +50,10 @@ class MainActivity : AppCompatActivity() {
                         tv.text = "新的坐标点：(" + nowX + "," + nowY + ")"
 
 
-
-                        var yy = nowX-oldX
-                        var xx = nowY-oldY
-                        view.translationY = viewY+yy
-                        view.translationX = viewX+xx
+                        var yy = nowX - oldX
+                        var xx = nowY - oldY
+                        view.translationY = viewY + yy
+                        view.translationX = viewX + xx
 
 //                        viewNowX =  viewX+(event.getX() - moveX)
 //                        viewNowY = viewY+(event.getY() - moveY)
@@ -63,6 +71,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 return true
             }
+
 
         })
 
