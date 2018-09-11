@@ -24,9 +24,9 @@ class MyAPP : Application() {
     override fun onCreate() {
         super.onCreate()
         myApp = this
-        shortcutManager = getSystemService(ShortcutManager::class.java)
+    //    shortcutManager = getSystemService(ShortcutManager::class.java)
 
-        setShortcutInfo()
+       // setShortcutInfo()
     }
 
     @TargetApi(Build.VERSION_CODES.N_MR1)
