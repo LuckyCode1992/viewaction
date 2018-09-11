@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view_touch.OntouchActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:background="@color/colorPrimary"
+        android:layout_width="80dp"
+        android:layout_height="80dp">
+        <ImageView
+            android:id="@+id/iv"
+            android:src="@drawable/kefu_2_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/rl1"
+        android:background="@color/colorPrimary"
+        android:layout_width="80dp"
+        android:layout_height="80dp">
+        <ImageView
+            android:id="@+id/iv1"
+            android:src="@drawable/kefu_2_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/rl2"
+        android:background="@color/colorPrimary"
+        android:layout_width="80dp"
+        android:layout_height="80dp">
+        <ImageView
+            android:id="@+id/iv2"
+            android:src="@drawable/kefu_2_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/rl3"
+        android:background="@color/colorPrimary"
+        android:layout_width="80dp"
+        android:layout_height="80dp">
+        <ImageView
+            android:id="@+id/iv3"
+            android:src="@drawable/kefu_2_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <com.justcode.hxl.viewaction.view_touch.MyRelativeLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/rl4"
+        android:background="@color/colorPrimary"
+        android:layout_width="80dp"
+        android:layout_height="80dp">
+        <ImageView
+            android:id="@+id/iv4"
+            android:src="@drawable/kefu_2_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.justcode.hxl.viewaction.view_touch.MyRelativeLayout>
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/intercepted_false"
+                android:text="intercepted_false"
+                android:background="@color/colorAccent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/intercepted_true"
+                android:text="intercepted_true"
+                android:background="@color/colorAccent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/touch_true"
+                android:text="touch_true"
+                android:background="@color/colorAccent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/touch_false"
+                android:text="touch_false"
+                android:background="@color/colorAccent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/tv_waibulanjie"
+        android:text="外部拦截"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_neibulanjie"
+        android:layout_marginTop="20dp"
+        android:text="内部拦截"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
