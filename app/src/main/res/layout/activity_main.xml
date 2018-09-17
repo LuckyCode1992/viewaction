@@ -5,26 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/kefu_2_pdf" />
+        <TextView
+            android:id="@+id/tv_NotifyActivity"
+            android:text="NotifyActivity"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="位置坐标" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_below="@+id/iv"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:background="#322343" />
 
 </RelativeLayout>
