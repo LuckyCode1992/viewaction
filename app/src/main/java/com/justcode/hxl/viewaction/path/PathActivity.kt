@@ -11,8 +11,11 @@ class PathActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_path)
 
-        button.setOnClickListener {
-            PathView_4.isControlPointTwo = !PathView_4.isControlPointTwo
+        clear.setOnClickListener{
+            p5.clear()
         }
+//        button.setOnClickListener {
+//            PathView_4.isControlPointTwo = !PathView_4.isControlPointTwo
+//        }
     }
 }

@@ -5,26 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".path.PathActivity">
-    <!--<com.justcode.hxl.viewaction.path.PathView_1-->
-    <!--android:id="@+id/p1"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content" />-->
 
-    <!--<com.justcode.hxl.viewaction.path.PathView_2-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content" />-->
-    <!--<com.justcode.hxl.viewaction.path.PathView_3-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content" />-->
-    <com.justcode.hxl.viewaction.path.PathView_4
+    <!--<com.justcode.hxl.viewaction.path.PathView_1-->
+        <!--android:id="@+id/p1"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:visibility="gone" />-->
+
+    <com.justcode.hxl.viewaction.path.PathView_2
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <com.justcode.hxl.viewaction.path.PathView_3
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.justcode.hxl.viewaction.path.PathView_4
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+  <com.justcode.hxl.viewaction.path.PathView_5
+      android:id="@+id/p5"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="点击"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="清除"
+       app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
