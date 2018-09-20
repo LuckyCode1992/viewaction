@@ -22,7 +22,20 @@
         <activity android:name=".shuxingdonghua.Main2Activity" />
         <activity android:name=".gesture.GestureActivity" />
         <activity android:name=".remoteview.NotifyActivity" />
-        <activity android:name=".remoteview.PendingActivity"></activity>
+        <activity android:name=".remoteview.PendingActivity" />
+
+        <receiver android:name=".remoteview.MyAppWidgetProvider">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_provider_info" />
+
+            <intent-filter>
+                <action android:name="com.justcode.hxl.viewaction.remoteview.ACTION" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".path.taoxin.TaoxinActivity"></activity>
     </application>
 
 </manifest>

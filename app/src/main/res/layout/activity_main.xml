@@ -9,12 +9,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/tv_NotifyActivity"
             android:text="NotifyActivity"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_taoxin"
+            android:layout_marginTop="10dp"
+            android:text="桃心"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
