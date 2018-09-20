@@ -8,6 +8,9 @@ import android.R.attr.x
 import android.graphics.*
 import java.lang.Math.sqrt
 import java.lang.Math.tan
+import android.R.attr.x
+import android.R.attr.y
+import android.graphics.PorterDuffXfermode
 
 
 class MycycleView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
@@ -22,6 +25,19 @@ class MycycleView @JvmOverloads constructor(context: Context, attrs: AttributeSe
 
     var mPointDatas: MutableList<PointF>? = null //放置四个数据点的集合
     var mPointControlls: MutableList<PointF>? = null//方式8个控制点的集合
+
+    var mDuration = 1000 //动画总时间
+    var mCurrTime = 0  //当前已进行时间
+    var mCount = 100//将总时间划分多少块
+    var mPiece = (mDuration / mCount).toLong() //每一块的时间
+    private var isRuning = false
+    var canvas: Canvas? = null
+
+    var nor1 = 0f
+    var nor2 = 0f
+    var nor3 = 0f
+    var nor4 = 0f
+    var nor5 = 0f
 
     //控制点比例常量，数学问题，不用管
     val CONTROL_POINT_Multiple = 4 * (sqrt(2.toDouble()) - 1) / 3
@@ -88,13 +104,21 @@ class MycycleView @JvmOverloads constructor(context: Context, attrs: AttributeSe
             it.add(PointF((mCenterX - mCircleRadius * CONTROL_POINT_Multiple).toFloat(), (mCenterY - mCircleRadius).toFloat()))
         }
 
+        if(nor1==0f){
+            nor1 = mPointDatas!![0].y
+            nor2 = mPointControlls!![2].x
+            nor3 =   mPointControlls!![3].y
+            nor4 =  mPointControlls!![4].y
+            nor5 =  mPointControlls!![5].x
+        }
+
     }
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 //        画坐标系
         canvas?.let {
-            canvas.save()
+            this.canvas = canvas
             //绘制x，y轴坐标系
             canvas.drawLine(mCenterX!!.toFloat(), 0f, mCenterX!!.toFloat(), height.toFloat(), paint)
             canvas.drawLine(0f, mCenterY!!.toFloat(), width.toFloat(), mCenterY!!.toFloat(), paint)
@@ -123,9 +147,46 @@ class MycycleView @JvmOverloads constructor(context: Context, attrs: AttributeSe
             }
 
             canvas.drawPath(pathCircle, mCirclePaint)
-            canvas.restore()
+
+
+
+            if (isRuning) {
+                //动态改变数据点和辅助点
+                mCurrTime += mPiece.toInt()
+                if (mCurrTime < mDuration) {
+
+                    mPointDatas!![0].y += 120f / mCount
+
+                    mPointControlls!![2].x -= 20f / mCount
+                    mPointControlls!![3].y -= 80f / mCount
+                    mPointControlls!![4].y -= 80f / mCount
+                    mPointControlls!![5].x += 20f / mCount
+
+                    postInvalidateDelayed(mPiece)
+                }
+            }
+
         }
 
+
     }
+
+    fun setRuning(runing: Boolean) {
+        isRuning = runing
+        invalidate()
+    }
+
+    fun reset() {
+        isRuning = false
+        mCurrTime = 0
+        mPointDatas!![0].y = nor1
+        mPointControlls!![2].x = nor2
+
+        mPointControlls!![3].y = nor3
+        mPointControlls!![4].y = nor4
+        mPointControlls!![5].x = nor5
+        invalidate()
+    }
+
 
 }
