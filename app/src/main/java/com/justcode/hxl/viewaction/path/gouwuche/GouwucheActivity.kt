@@ -12,7 +12,6 @@ import android.graphics.PointF
 import android.widget.ImageView
 import android.animation.ValueAnimator
 import android.view.animation.AccelerateInterpolator
-import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
 
 
