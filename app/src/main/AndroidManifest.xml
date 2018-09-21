@@ -35,7 +35,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".path.taoxin.TaoxinActivity"></activity>
+        <activity android:name=".path.taoxin.TaoxinActivity" />
+        <activity android:name=".path.gouwuche.GouwucheActivity"></activity>
     </application>
 
 </manifest>
