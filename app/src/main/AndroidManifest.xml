@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.justcode.hxl.viewaction">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name=".MyAPP"
         android:allowBackup="true"
@@ -36,7 +36,8 @@
         </receiver>
 
         <activity android:name=".path.taoxin.TaoxinActivity" />
-        <activity android:name=".path.gouwuche.GouwucheActivity"></activity>
+        <activity android:name=".path.gouwuche.GouwucheActivity" />
+        <activity android:name="com.justcode.hxl.仿微信查看照片.PhotoViewerActivity"></activity>
     </application>
 
 </manifest>
