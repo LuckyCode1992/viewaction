@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.justcode.hxl.viewaction.path.gouwuche.GouwucheActivity
 import com.justcode.hxl.viewaction.path.taoxin.TaoxinActivity
 import com.justcode.hxl.viewaction.remoteview.NotifyActivity
+import com.justcode.hxl.viewaction.viewdonghua.ViewDonghuaActivity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
 
 import kotlinx.android.synthetic.main.activity_main.*
@@ -37,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         tv_fangweixinchakanzhaopian.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, PhotoViewerActivity::class.java)
+            startActivity(intent)
+        }
+        tv_viewdonghua.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, ViewDonghuaActivity::class.java)
             startActivity(intent)
         }
     }
