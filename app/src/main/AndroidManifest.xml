@@ -40,7 +40,13 @@
         <activity android:name=".path.taoxin.TaoxinActivity" />
         <activity android:name=".path.gouwuche.GouwucheActivity" />
         <activity android:name="com.justcode.hxl.仿微信查看照片.PhotoViewerActivity" />
-        <activity android:name=".viewdonghua.ViewDonghuaActivity"></activity>
+        <activity android:name=".viewdonghua.ViewDonghuaActivity" />
+        <activity android:name=".acticitychange.Change1Activity" />
+        <activity android:name=".acticitychange.ChangeHomeActivity" />
+        <activity android:name=".acticitychange.ExplodeActivity" />
+        <activity android:name=".acticitychange.SlideActivity" />
+        <activity android:name=".acticitychange.FadeActivity" />
+        <activity android:name=".acticitychange.SharedElementActivity"></activity>
     </application>
 
 </manifest>

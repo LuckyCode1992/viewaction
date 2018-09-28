@@ -3,6 +3,8 @@ package com.justcode.hxl.viewaction
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.justcode.hxl.viewaction.acticitychange.Change1Activity
+import com.justcode.hxl.viewaction.acticitychange.ChangeHomeActivity
 import com.justcode.hxl.viewaction.path.gouwuche.GouwucheActivity
 import com.justcode.hxl.viewaction.path.taoxin.TaoxinActivity
 import com.justcode.hxl.viewaction.remoteview.NotifyActivity
@@ -43,6 +45,17 @@ class MainActivity : AppCompatActivity() {
         tv_viewdonghua.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, ViewDonghuaActivity::class.java)
+            startActivity(intent)
+        }
+        tv_changeacticity1.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, Change1Activity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.enter_activity, R.anim.exit_activity)
+        }
+        tv_changeacticity2.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, ChangeHomeActivity::class.java)
             startActivity(intent)
         }
     }

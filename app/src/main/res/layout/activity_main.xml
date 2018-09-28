@@ -5,54 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:orientation="vertical"
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_NotifyActivity"
-            android:text="NotifyActivity"
-            android:gravity="center"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_taoxin"
-            android:layout_marginTop="10dp"
-            android:text="桃心"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_NotifyActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="NotifyActivity" />
 
-        <TextView
-            android:id="@+id/tv_gouwuche"
-            android:layout_marginTop="10dp"
-            android:text="购物车"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_taoxin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="桃心" />
 
-        <TextView
-            android:id="@+id/tv_fangweixinchakanzhaopian"
-            android:layout_marginTop="10dp"
-            android:text="仿微信查看照片"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_gouwuche"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="购物车" />
 
-        <TextView
-            android:id="@+id/tv_viewdonghua"
-            android:layout_marginTop="10dp"
-            android:text="view动画"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-</ScrollView>
+            <TextView
+                android:id="@+id/tv_fangweixinchakanzhaopian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="仿微信查看照片" />
+
+            <TextView
+                android:id="@+id/tv_viewdonghua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="view动画" />
+
+            <TextView
+                android:id="@+id/tv_changeacticity1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="activity切换动画简单版" />
+            <TextView
+                android:id="@+id/tv_changeacticity2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="activity切换动画炫酷版" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>
