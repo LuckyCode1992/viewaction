@@ -3,6 +3,7 @@ package com.justcode.hxl.viewaction
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.justcode.hxl.Android和JS交互.WebViewActivity
 import com.justcode.hxl.viewaction.acticitychange.Change1Activity
 import com.justcode.hxl.viewaction.acticitychange.ChangeHomeActivity
 import com.justcode.hxl.viewaction.path.gouwuche.GouwucheActivity
@@ -56,6 +57,11 @@ class MainActivity : AppCompatActivity() {
         tv_changeacticity2.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, ChangeHomeActivity::class.java)
+            startActivity(intent)
+        }
+        tv_webview.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, WebViewActivity::class.java)
             startActivity(intent)
         }
     }

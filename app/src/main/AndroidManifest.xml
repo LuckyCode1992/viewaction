@@ -46,7 +46,8 @@
         <activity android:name=".acticitychange.ExplodeActivity" />
         <activity android:name=".acticitychange.SlideActivity" />
         <activity android:name=".acticitychange.FadeActivity" />
-        <activity android:name=".acticitychange.SharedElementActivity"></activity>
+        <activity android:name=".acticitychange.SharedElementActivity" />
+        <activity android:name="com.justcode.hxl.Android和JS交互.WebViewActivity"></activity>
     </application>
 
 </manifest>

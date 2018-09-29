@@ -61,6 +61,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="activity切换动画简单版" />
+
             <TextView
                 android:id="@+id/tv_changeacticity2"
                 android:layout_width="match_parent"
@@ -68,6 +69,14 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="activity切换动画炫酷版" />
+
+            <TextView
+                android:id="@+id/tv_webview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="js和Android交互" />
 
         </LinearLayout>
     </ScrollView>

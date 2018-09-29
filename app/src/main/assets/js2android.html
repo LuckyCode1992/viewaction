@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js_android</title>
+    <style type="text/css">
+    body{
+        background-color: slategray;
+    }
+</style>
+</head>
+<body>
+<script>
+    <!--js调用Android并传入值-->
+    function js2android() {
+        const input = document.getElementById("js_input").value;
+        if (input === "") {
+            alert("请输入")
+        } else {
+            android.showjs2android(input)
+        }
+    }
+    <!--Android调用js并传入值-->
+    function android2js(input) {
+        document.getElementById("show_input_android").innerText = input
+    }
+</script>
+
+<p>展示Android传过来的数据：</p>
+<p id="show_input_android"></p>
+<br>
+<p>js输入数据:</p>
+<input id="js_input" type="text">
+<button onclick="js2android()">发送js数据到Android</button>
+</body>
+</html>
