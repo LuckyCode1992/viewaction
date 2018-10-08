@@ -22,9 +22,6 @@ class WebViewActivity : AppCompatActivity() {
 
         webview.settings.javaScriptEnabled = true
         webview.settings.javaScriptCanOpenWindowsAutomatically = true
-
-
-
         webview.webChromeClient = object : WebChromeClient() {
 
         }
@@ -38,7 +35,7 @@ class WebViewActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             // Android版本变量
-            val version = Build.VERSION.SDK_INT;
+            val version = Build.VERSION.SDK_INT
             // 因为该方法在 Android 4.4 版本才可使用，所以使用时需进行版本判断
             if (version < 18) {
                 webview.loadUrl("javascript:android2js('$input')")
@@ -51,9 +48,7 @@ class WebViewActivity : AppCompatActivity() {
 
         }
     }
-
     class AndroidObject(var tv: TextView) {
-
         @JavascriptInterface
         fun showjs2android(input: String) {
             tv.text = input

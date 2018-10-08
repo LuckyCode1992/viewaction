@@ -11,6 +11,7 @@ import com.justcode.hxl.viewaction.path.taoxin.TaoxinActivity
 import com.justcode.hxl.viewaction.remoteview.NotifyActivity
 import com.justcode.hxl.viewaction.viewdonghua.ViewDonghuaActivity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
+import com.justcode.hxl.悬浮窗.WindowActivity
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -62,6 +63,11 @@ class MainActivity : AppCompatActivity() {
         tv_webview.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, WebViewActivity::class.java)
+            startActivity(intent)
+        }
+        tv_xuanfuchuang.setOnClickListener{
+            var intent = Intent()
+            intent.setClass(this, WindowActivity::class.java)
             startActivity(intent)
         }
     }

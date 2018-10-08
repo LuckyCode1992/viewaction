@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+
     <application
         android:name=".MyAPP"
         android:allowBackup="true"
@@ -47,7 +48,8 @@
         <activity android:name=".acticitychange.SlideActivity" />
         <activity android:name=".acticitychange.FadeActivity" />
         <activity android:name=".acticitychange.SharedElementActivity" />
-        <activity android:name="com.justcode.hxl.Android和JS交互.WebViewActivity"></activity>
+        <activity android:name="com.justcode.hxl.Android和JS交互.WebViewActivity" />
+        <activity android:name="com.justcode.hxl.悬浮窗.WindowActivity"></activity>
     </application>
 
 </manifest>
