@@ -16,33 +16,42 @@ import android.provider.Settings
 import android.view.*
 import android.widget.Toast
 import android.view.WindowManager
-
-
+import com.justcode.hxl.floatwindow.service.FloatWindowService
+import kotlinx.android.synthetic.main.activity_window.*
 
 
 class WindowActivity : AppCompatActivity() {
 
-     var mWindowManager: WindowManager? = null
-     var floatWindowView: View? = null
+    var mWindowManager: WindowManager? = null
+    var floatWindowView: View? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_window)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (Settings.canDrawOverlays(applicationContext)) {
-                showWindow()
+        start_float_window.setOnClickListener {
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (Settings.canDrawOverlays(applicationContext)) {
+                    startService2Window()
+                } else {
+                    //启动Activity让用户授权
+                    val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION)
+                    intent.setData(Uri.parse("package:$packageName"))
+                    startActivityForResult(intent, 100)
+                }
             } else {
-                //启动Activity让用户授权
-                val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION)
-                intent.setData(Uri.parse("package:$packageName"))
-                startActivityForResult(intent, 100)
+                startService2Window()
             }
-        } else {
-            showWindow()
         }
 
 
+    }
+
+    fun startService2Window() {
+        val intent = Intent(this, FloatWindowService::class.java)
+        startService(intent)
+        FloatWindowService.activity = this
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -96,7 +105,7 @@ class WindowActivity : AppCompatActivity() {
         if (requestCode == 100) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (Settings.canDrawOverlays(applicationContext)) {
-                    showWindow()
+                    startService2Window()
                 } else {
                     Toast.makeText(this, "ACTION_MANAGE_OVERLAY_PERMISSION权限已被拒绝", Toast.LENGTH_SHORT).show()
                 }

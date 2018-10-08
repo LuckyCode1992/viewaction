@@ -50,6 +50,9 @@
         <activity android:name=".acticitychange.SharedElementActivity" />
         <activity android:name="com.justcode.hxl.Android和JS交互.WebViewActivity" />
         <activity android:name="com.justcode.hxl.悬浮窗.WindowActivity"></activity>
+
+
+        <service android:name="com.justcode.hxl.floatwindow.service.FloatWindowService"/>
     </application>
 
 </manifest>
