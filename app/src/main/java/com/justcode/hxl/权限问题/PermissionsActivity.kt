@@ -17,7 +17,6 @@ class PermissionsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_permissions)
-
         var listener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 set.add("android.permission." + buttonView.tag.toString())
@@ -63,14 +62,14 @@ class PermissionsActivity : AppCompatActivity() {
         }
 
 
-//        RxPermissions(this).request(Manifest.permission.CAMERA,
-//                Manifest.permission.RECORD_AUDIO)
-//                .subscribe {
-//                    if (it) {
-//
-//                    } else {
-//                        Toast.makeText(this, "没有权限无法进入", Toast.LENGTH_SHORT).show()
-//                    }
-//                }
+        RxPermissions(this).request(Manifest.permission.CAMERA,
+                Manifest.permission.RECORD_AUDIO)
+                .subscribe {
+                    if (it) {
+
+                    } else {
+                        Toast.makeText(this, "没有权限无法进入", Toast.LENGTH_SHORT).show()
+                    }
+                }
     }
 }

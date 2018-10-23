@@ -36,4 +36,5 @@ dependencies {
     implementation project(':photoviewer')
     implementation project(':floatwindow')
     implementation project(':permission')
+    implementation project(':tools')
 }

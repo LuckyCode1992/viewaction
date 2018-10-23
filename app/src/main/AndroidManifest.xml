@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!--测试权限-->
+    <!-- 测试权限 -->
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.BODY_SENSORS" />
@@ -14,8 +14,8 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--测试权限-->
 
+    <!-- 测试权限 -->
     <application
         android:name="com.justcode.hxl.MyAPP"
         android:allowBackup="true"
@@ -64,7 +64,8 @@
 
         <service android:name="com.justcode.hxl.floatwindow.service.FloatWindowService" />
 
-        <activity android:name="com.justcode.hxl.权限问题.PermissionsActivity"></activity>
+        <activity android:name="com.justcode.hxl.权限问题.PermissionsActivity" />
+        <activity android:name="com.justcode.hxl.二维码条形码验证码.QR_BAR_V_CODE_Activity"></activity>
     </application>
 
 </manifest>

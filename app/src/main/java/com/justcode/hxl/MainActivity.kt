@@ -11,6 +11,7 @@ import com.justcode.hxl.viewaction.path.gouwuche.GouwucheActivity
 import com.justcode.hxl.viewaction.path.taoxin.TaoxinActivity
 import com.justcode.hxl.viewaction.remoteview.NotifyActivity
 import com.justcode.hxl.viewaction.viewdonghua.ViewDonghuaActivity
+import com.justcode.hxl.二维码条形码验证码.QR_BAR_V_CODE_Activity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
 import com.justcode.hxl.悬浮窗.WindowActivity
 import com.justcode.hxl.权限问题.PermissionsActivity
@@ -75,6 +76,11 @@ class MainActivity : AppCompatActivity() {
         tv_premissions.setOnClickListener{
             var intent = Intent()
             intent.setClass(this, PermissionsActivity::class.java)
+            startActivity(intent)
+        }
+        tv_codes.setOnClickListener{
+            var intent = Intent()
+            intent.setClass(this, QR_BAR_V_CODE_Activity::class.java)
             startActivity(intent)
         }
     }
