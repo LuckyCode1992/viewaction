@@ -1,9 +1,10 @@
-package com.justcode.hxl.viewaction
+package com.justcode.hxl
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.justcode.hxl.Android和JS交互.WebViewActivity
+import com.justcode.hxl.viewaction.R
 import com.justcode.hxl.viewaction.acticitychange.Change1Activity
 import com.justcode.hxl.viewaction.acticitychange.ChangeHomeActivity
 import com.justcode.hxl.viewaction.path.gouwuche.GouwucheActivity
@@ -12,6 +13,7 @@ import com.justcode.hxl.viewaction.remoteview.NotifyActivity
 import com.justcode.hxl.viewaction.viewdonghua.ViewDonghuaActivity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
 import com.justcode.hxl.悬浮窗.WindowActivity
+import com.justcode.hxl.权限问题.PermissionsActivity
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -68,6 +70,11 @@ class MainActivity : AppCompatActivity() {
         tv_xuanfuchuang.setOnClickListener{
             var intent = Intent()
             intent.setClass(this, WindowActivity::class.java)
+            startActivity(intent)
+        }
+        tv_premissions.setOnClickListener{
+            var intent = Intent()
+            intent.setClass(this, PermissionsActivity::class.java)
             startActivity(intent)
         }
     }

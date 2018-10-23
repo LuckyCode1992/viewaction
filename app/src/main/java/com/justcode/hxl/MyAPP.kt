@@ -1,4 +1,4 @@
-package com.justcode.hxl.viewaction
+package com.justcode.hxl
 
 import android.annotation.TargetApi
 import android.app.Application
@@ -8,6 +8,7 @@ import android.content.pm.ShortcutManager
 import android.graphics.drawable.Icon
 import android.os.Build
 import android.support.annotation.RequiresApi
+import com.justcode.hxl.viewaction.R
 import com.justcode.hxl.viewaction.gesture.GestureActivity
 import com.justcode.hxl.viewaction.shuxingdonghua.Main2Activity
 import com.justcode.hxl.viewaction.view_touch.OntouchActivity
@@ -51,7 +52,7 @@ class MyAPP : Application() {
             var shortcutInfo = ShortcutInfo.Builder(this,"id"+i)
                     .setShortLabel("跳转到  "+i)
                     .setLongLabel("跳转到activity  "+i)
-                    .setIcon(Icon.createWithResource(this,R.drawable.kefu_2_pdf))
+                    .setIcon(Icon.createWithResource(this, R.drawable.kefu_2_pdf))
                     .setIntent(intent)
                     .build()
             list.add(shortcutInfo)
