@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.justcode.hxl.viewaction">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -49,23 +50,24 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".path.taoxin.TaoxinActivity" />
-        <activity android:name=".path.gouwuche.GouwucheActivity" />
-        <activity android:name="com.justcode.hxl.仿微信查看照片.PhotoViewerActivity" />
-        <activity android:name=".viewdonghua.ViewDonghuaActivity" />
-        <activity android:name=".acticitychange.Change1Activity" />
-        <activity android:name=".acticitychange.ChangeHomeActivity" />
-        <activity android:name=".acticitychange.ExplodeActivity" />
-        <activity android:name=".acticitychange.SlideActivity" />
-        <activity android:name=".acticitychange.FadeActivity" />
-        <activity android:name=".acticitychange.SharedElementActivity" />
-        <activity android:name="com.justcode.hxl.Android和JS交互.WebViewActivity" />
-        <activity android:name="com.justcode.hxl.悬浮窗.WindowActivity" />
+        <activity android:name=".path.taoxin.TaoxinActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".path.gouwuche.GouwucheActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.justcode.hxl.仿微信查看照片.PhotoViewerActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".viewdonghua.ViewDonghuaActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".acticitychange.Change1Activity" android:screenOrientation="portrait"/>
+        <activity android:name=".acticitychange.ChangeHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".acticitychange.ExplodeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".acticitychange.SlideActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".acticitychange.FadeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".acticitychange.SharedElementActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.justcode.hxl.Android和JS交互.WebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.justcode.hxl.悬浮窗.WindowActivity" android:screenOrientation="portrait"/>
 
-        <service android:name="com.justcode.hxl.floatwindow.service.FloatWindowService" />
+        <service android:name="com.justcode.hxl.floatwindow.service.FloatWindowService" android:screenOrientation="portrait"/>
 
-        <activity android:name="com.justcode.hxl.权限问题.PermissionsActivity" />
-        <activity android:name="com.justcode.hxl.二维码条形码验证码.QR_BAR_V_CODE_Activity"></activity>
+        <activity android:name="com.justcode.hxl.权限问题.PermissionsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.justcode.hxl.二维码条形码验证码.QR_BAR_V_CODE_Activity" android:screenOrientation="portrait"/>
+        <activity android:name="com.justcode.hxl.tools.二维码条形码验证码.scaner.ActivityScanerCode" android:screenOrientation="portrait" />
     </application>
 
 </manifest>

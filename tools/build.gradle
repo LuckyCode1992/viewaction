@@ -32,5 +32,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //Zxing核心包
-    implementation 'com.google.zxing:core:3.3.0'
+    api 'com.google.zxing:core:3.3.0'
 }
