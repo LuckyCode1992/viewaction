@@ -98,6 +98,13 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="二维码，条形码，验证码" />
+            <TextView
+                android:id="@+id/tv_scale_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="图片缩放" />
 
         </LinearLayout>
     </ScrollView>

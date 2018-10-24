@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.justcode.hxl.Android和JS交互.WebViewActivity
+import com.justcode.hxl.imagescale.ImageScaleActivity
 import com.justcode.hxl.viewaction.R
 import com.justcode.hxl.viewaction.acticitychange.Change1Activity
 import com.justcode.hxl.viewaction.acticitychange.ChangeHomeActivity
@@ -81,6 +82,11 @@ class MainActivity : AppCompatActivity() {
         tv_codes.setOnClickListener{
             var intent = Intent()
             intent.setClass(this, QR_BAR_V_CODE_Activity::class.java)
+            startActivity(intent)
+        }
+        tv_scale_image.setOnClickListener{
+            var intent = Intent()
+            intent.setClass(this, ImageScaleActivity::class.java)
             startActivity(intent)
         }
     }
