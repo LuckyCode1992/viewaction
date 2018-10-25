@@ -113,6 +113,14 @@
                 android:gravity="center"
                 android:text="设备信息" />
 
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="进度条" />
+
         </LinearLayout>
     </ScrollView>
 

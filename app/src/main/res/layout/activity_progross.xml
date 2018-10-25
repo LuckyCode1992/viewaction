@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.justcode.hxl.进度条.ProgressActivity">
+
+    <com.justcode.hxl.tools.进度条.LoadProgressBar
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        app:loadingColor="#40c4ff"
+        app:radius="20dp"
+        app:stopColor="#ff9800"
+        app:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="重新下载" />
+
+    <com.justcode.hxl.tools.进度条.RoundProgressBar
+        android:id="@+id/roundbar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        app:rcBackgroundColor="#ff3c3a3b"
+        app:rcBackgroundPadding="2dp"
+        app:rcMax="100"
+        app:rcProgress="40"
+        app:rcProgressColor="#ff669900"
+        app:rcRadius="10dp"
+        app:rcSecondaryProgress="60"
+        app:rcSecondaryProgressColor="#7f669900" />
+    <com.justcode.hxl.tools.进度条.IconRoundProgressBar
+        android:id="@+id/iconround"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:rcBackgroundColor="#ff3c3a3b"
+        app:rcBackgroundPadding="2dp"
+        app:rcIconBackgroundColor="#ff669900"
+        app:rcIconPadding="5dp"
+        app:rcIconSize="40dp"
+        app:rcIconSrc="@drawable/set"
+        app:rcMax="150"
+        app:rcProgress="90"
+        app:rcProgressColor="#7f669900"
+        app:rcRadius="5dp"/>
+    <com.justcode.hxl.tools.进度条.TextRoundProgressBar
+        android:id="@+id/textround"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        app:rcBackgroundColor="#ff3c3a3b"
+        app:rcBackgroundPadding="5dp"
+        app:rcMax="65535"
+        app:rcProgress="12890.70"
+        app:rcProgressColor="#ff9933cc"
+        app:rcRadius="10dp"
+        app:rcTextProgress="Von"
+        app:rcTextProgressColor="#ffffff"
+        app:rcTextProgressMargin="10dp"
+        app:rcTextProgressSize="12sp"/>
+    <com.justcode.hxl.tools.进度条.RoundProgress
+        android:id="@+id/round"
+        android:layout_gravity="center"
+        android:layout_width="270dp"
+        android:layout_height="270dp" />
+
+</LinearLayout>

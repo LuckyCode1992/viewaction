@@ -20,6 +20,7 @@ import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
 import com.justcode.hxl.悬浮窗.WindowActivity
 import com.justcode.hxl.权限问题.PermissionsActivity
 import com.justcode.hxl.设备信息和工具.DeviceActivity
+import com.justcode.hxl.进度条.ProgressActivity
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -107,6 +108,11 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
 
+        }
+        tv_progress.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, ProgressActivity::class.java)
+            startActivity(intent)
         }
     }
 
