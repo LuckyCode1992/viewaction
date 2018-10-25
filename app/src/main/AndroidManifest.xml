@@ -100,7 +100,8 @@
         <activity
             android:name="com.justcode.hxl.tools.二维码条形码验证码.scaner.ActivityScanerCode"
             android:screenOrientation="portrait" />
-        <activity android:name="com.justcode.hxl.imagescale.ImageScaleActivity"></activity>
+        <activity android:name="com.justcode.hxl.imagescale.ImageScaleActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.justcode.hxl.设备信息和工具.DeviceActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

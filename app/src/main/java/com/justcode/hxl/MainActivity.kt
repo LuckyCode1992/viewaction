@@ -1,10 +1,13 @@
 package com.justcode.hxl
 
+import android.Manifest
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.justcode.hxl.Android和JS交互.WebViewActivity
 import com.justcode.hxl.imagescale.ImageScaleActivity
+import com.justcode.hxl.permission.RxPermissions
 import com.justcode.hxl.viewaction.R
 import com.justcode.hxl.viewaction.acticitychange.Change1Activity
 import com.justcode.hxl.viewaction.acticitychange.ChangeHomeActivity
@@ -16,6 +19,7 @@ import com.justcode.hxl.二维码条形码验证码.QR_BAR_V_CODE_Activity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
 import com.justcode.hxl.悬浮窗.WindowActivity
 import com.justcode.hxl.权限问题.PermissionsActivity
+import com.justcode.hxl.设备信息和工具.DeviceActivity
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -69,25 +73,40 @@ class MainActivity : AppCompatActivity() {
             intent.setClass(this, WebViewActivity::class.java)
             startActivity(intent)
         }
-        tv_xuanfuchuang.setOnClickListener{
+        tv_xuanfuchuang.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, WindowActivity::class.java)
             startActivity(intent)
         }
-        tv_premissions.setOnClickListener{
+        tv_premissions.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, PermissionsActivity::class.java)
             startActivity(intent)
         }
-        tv_codes.setOnClickListener{
+        tv_codes.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, QR_BAR_V_CODE_Activity::class.java)
             startActivity(intent)
         }
-        tv_scale_image.setOnClickListener{
+        tv_scale_image.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, ImageScaleActivity::class.java)
             startActivity(intent)
+        }
+        tv_device_info.setOnClickListener {
+
+            RxPermissions(this)
+                    .request(Manifest.permission.ACCESS_WIFI_STATE, Manifest.permission.CALL_PHONE, Manifest.permission.READ_PHONE_STATE)
+                    .subscribe {
+                        if (it) {
+                            var intent = Intent()
+                            intent.setClass(this, DeviceActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(this, "请给权限", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
         }
     }
 
