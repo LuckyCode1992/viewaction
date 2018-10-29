@@ -120,7 +120,13 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="进度条" />
-
+            <TextView
+                android:id="@+id/tv_give_a_like"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="点赞" />
         </LinearLayout>
     </ScrollView>
 

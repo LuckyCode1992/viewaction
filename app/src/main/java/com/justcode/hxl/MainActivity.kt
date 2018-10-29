@@ -19,6 +19,7 @@ import com.justcode.hxl.二维码条形码验证码.QR_BAR_V_CODE_Activity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
 import com.justcode.hxl.悬浮窗.WindowActivity
 import com.justcode.hxl.权限问题.PermissionsActivity
+import com.justcode.hxl.点赞.GiveALikeActivity
 import com.justcode.hxl.设备信息和工具.DeviceActivity
 import com.justcode.hxl.进度条.ProgressActivity
 
@@ -112,6 +113,11 @@ class MainActivity : AppCompatActivity() {
         tv_progress.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, ProgressActivity::class.java)
+            startActivity(intent)
+        }
+        tv_give_a_like.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, GiveALikeActivity::class.java)
             startActivity(intent)
         }
     }
