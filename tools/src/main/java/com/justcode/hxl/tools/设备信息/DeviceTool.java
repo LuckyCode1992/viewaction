@@ -580,7 +580,7 @@ public class DeviceTool {
             isr = new InputStreamReader(pp.getInputStream());
             lnr = new LineNumberReader(isr);
             macAddress = lnr.readLine().replace(":", "");
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             closeIO(lnr, isr);
