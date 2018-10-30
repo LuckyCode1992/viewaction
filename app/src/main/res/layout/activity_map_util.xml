@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.justcode.hxl.maputil.MapUtilActivity">
+
+    <Button
+        android:id="@+id/btn_gaode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="高德导航——从自己的位置开始走" />
+
+    <Button
+        android:id="@+id/btn_baidu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="百度导航——从自己的位置开始走" />
+
+    <Button
+        android:id="@+id/btn_tenxung"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="腾讯导航——从自己的位置开始走" />
+
+
+</LinearLayout>

@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.justcode.hxl.Android和JS交互.WebViewActivity
 import com.justcode.hxl.imagescale.ImageScaleActivity
+import com.justcode.hxl.maputil.MapUtilActivity
 import com.justcode.hxl.permission.RxPermissions
 import com.justcode.hxl.viewaction.R
 import com.justcode.hxl.viewaction.acticitychange.Change1Activity
@@ -118,6 +119,11 @@ class MainActivity : AppCompatActivity() {
         tv_give_a_like.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, GiveALikeActivity::class.java)
+            startActivity(intent)
+        }
+        tv_maputil.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, MapUtilActivity::class.java)
             startActivity(intent)
         }
     }

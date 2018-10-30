@@ -107,7 +107,8 @@
             android:name="com.justcode.hxl.设备信息和工具.DeviceActivity"
             android:screenOrientation="portrait" />
         <activity android:name="com.justcode.hxl.进度条.ProgressActivity" />
-        <activity android:name="com.justcode.hxl.点赞.GiveALikeActivity"></activity>
+        <activity android:name="com.justcode.hxl.点赞.GiveALikeActivity" />
+        <activity android:name="com.justcode.hxl.maputil.MapUtilActivity"></activity>
     </application>
 
 </manifest>
