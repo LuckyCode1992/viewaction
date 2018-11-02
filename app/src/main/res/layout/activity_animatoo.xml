@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.justcode.hxl.activity_animatoo.AnimatooActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateZoom"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateFade"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateWindmill"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateSpin"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateDiagonal"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateSplit"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateShrink"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateCard"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateInAndOut"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateSwipeLeft"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateSwipeRight"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateSlideLeft"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateSlideRight"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateSlideDown"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button15"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="animateSlideUp"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

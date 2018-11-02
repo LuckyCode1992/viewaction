@@ -37,4 +37,5 @@ dependencies {
     implementation project(':floatwindow')
     implementation project(':permission')
     implementation project(':tools')
+    implementation project(':animatoolib')
 }

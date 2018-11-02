@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.justcode.hxl.Android和JS交互.WebViewActivity
+import com.justcode.hxl.activity_animatoo.AnimatooActivity
 import com.justcode.hxl.imagescale.ImageScaleActivity
 import com.justcode.hxl.maputil.MapUtilActivity
 import com.justcode.hxl.permission.RxPermissions
@@ -124,6 +125,12 @@ class MainActivity : AppCompatActivity() {
         tv_maputil.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, MapUtilActivity::class.java)
+            startActivity(intent)
+        }
+
+        tv_activity_animatoo.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, AnimatooActivity::class.java)
             startActivity(intent)
         }
     }

@@ -108,7 +108,9 @@
             android:screenOrientation="portrait" />
         <activity android:name="com.justcode.hxl.进度条.ProgressActivity" />
         <activity android:name="com.justcode.hxl.点赞.GiveALikeActivity" />
-        <activity android:name="com.justcode.hxl.maputil.MapUtilActivity"></activity>
+        <activity android:name="com.justcode.hxl.maputil.MapUtilActivity" />
+        <activity android:name="com.justcode.hxl.activity_animatoo.AnimatooActivity" />
+        <activity android:name="com.justcode.hxl.activity_animatoo.AnimatooDemoActivity"></activity>
     </application>
 
 </manifest>

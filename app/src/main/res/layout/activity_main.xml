@@ -134,6 +134,14 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="地图工具" />
+
+            <TextView
+                android:id="@+id/tv_activity_animatoo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="activity切换效果集合（简单）" />
         </LinearLayout>
 
     </ScrollView>
