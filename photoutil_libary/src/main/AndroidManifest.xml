@@ -1,0 +1,28 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.justcode.hxl.photoutil_libary">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application android:allowBackup="true">
+        <activity
+            android:name=".crop.CropImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".images_select.AlbumSelectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".images_select.ImageSelectActivity"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.justcode.hxl.viewaction.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths1" />
+        </provider>
+    </application>
+</manifest>

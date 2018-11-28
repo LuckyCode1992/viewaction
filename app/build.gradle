@@ -39,4 +39,5 @@ dependencies {
     implementation project(':tools')
     implementation project(':animatoolib')
     implementation project(':chelaile')
+    implementation project(':photoutil_libary')
 }
