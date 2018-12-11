@@ -29,7 +29,7 @@ class VideoPlayerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video_player)
-
+        switchFragment(fragment1)
         btn1.setOnClickListener {
             switchFragment(fragment1)
         }
