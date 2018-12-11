@@ -40,4 +40,5 @@ dependencies {
     implementation project(':animatoolib')
     implementation project(':chelaile')
     implementation project(':photoutil_libary')
+    implementation project(':video_player')
 }
