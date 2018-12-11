@@ -110,7 +110,12 @@
         <activity android:name="com.justcode.hxl.点赞.GiveALikeActivity" />
         <activity android:name="com.justcode.hxl.maputil.MapUtilActivity" />
         <activity android:name="com.justcode.hxl.activity_animatoo.AnimatooActivity" />
-        <activity android:name="com.justcode.hxl.activity_animatoo.AnimatooDemoActivity"></activity>
+        <activity android:name="com.justcode.hxl.activity_animatoo.AnimatooDemoActivity" />
+        <activity
+            android:name="com.justcode.hxl.videoplayer.VideoPlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="在fragment中使用"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

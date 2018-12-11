@@ -11,6 +11,7 @@ import com.justcode.hxl.chelaile.CheLaileActivity
 import com.justcode.hxl.imagescale.ImageScaleActivity
 import com.justcode.hxl.maputil.MapUtilActivity
 import com.justcode.hxl.permission.RxPermissions
+import com.justcode.hxl.videoplayer.VideoPlayerActivity
 import com.justcode.hxl.viewaction.R
 import com.justcode.hxl.viewaction.acticitychange.Change1Activity
 import com.justcode.hxl.viewaction.acticitychange.ChangeHomeActivity
@@ -138,6 +139,11 @@ class MainActivity : AppCompatActivity() {
         tv_activity_chelaile.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, CheLaileActivity::class.java)
+            startActivity(intent)
+        }
+        tv_activity_video.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, VideoPlayerActivity::class.java)
             startActivity(intent)
         }
     }
