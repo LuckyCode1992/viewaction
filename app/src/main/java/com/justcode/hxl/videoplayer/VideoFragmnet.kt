@@ -11,11 +11,14 @@ import com.justcode.hxl.video_player.NiceVideoPlayerManager
 
 import com.justcode.hxl.viewaction.R
 import kotlinx.android.synthetic.main.fragment_video.*
+import com.wanglu.photoviewerlibrary.photoview.PhotoViewAttacher.CURRENT_STATE
+import android.support.v7.widget.RecyclerView
+
 
 class VideoFragmnet : Fragment() {
     var text: String = ""
     var currentPosition = -1
-    var list:MutableList<String> = arrayListOf()
+    var list: MutableList<String> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -46,10 +49,35 @@ class VideoFragmnet : Fragment() {
         list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/04/2017-04-21_16-41-07.mp4")
         list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/04/2017-04-21_16-41-07.mp4")
         list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/05/2017-05-03_13-02-41.mp4")
+        val adapter = VideoAdapter(context!!, list)
+        recycleview.adapter = adapter
 
+        adapter.itemClick = {
+            currentPosition = it
+        }
 
+        recycleview.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                val layoutManager = recyclerView!!.layoutManager
+                //判断是当前layoutManager是否为LinearLayoutManager
+                // 只有LinearLayoutManager才有查找第一个和最后一个可见view位置的方法
+                if (layoutManager is LinearLayoutManager) {
+                    val linearManager = layoutManager
+                    //获取最后一个可见view的位置
+                    val lastItemPosition = linearManager.findLastVisibleItemPosition()
+                    //获取第一个可见view的位置
+                    val firstItemPosition = linearManager.findFirstVisibleItemPosition()
+                    //获取可见view的总数
+                    val visibleItemCount = linearManager.childCount
+                    if (currentPosition < firstItemPosition || currentPosition > lastItemPosition) {
+                        NiceVideoPlayerManager.instance().releaseNiceVideoPlayer()
+                    }
+
+                }
+            }
+        })
     }
-
 
     override fun onHiddenChanged(hidden: Boolean) {
         super.onHiddenChanged(hidden)
