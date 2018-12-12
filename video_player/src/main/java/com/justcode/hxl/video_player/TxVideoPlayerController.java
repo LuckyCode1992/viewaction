@@ -360,7 +360,8 @@ public class TxVideoPlayerController
         if (v == mCenterStart) {
             if (mNiceVideoPlayer.isIdle()) {
                 mNiceVideoPlayer.start();
-                onStartListener.call();
+                if (onStartListener != null)
+                    onStartListener.call();
             }
         } else if (v == mBack) {
             if (mNiceVideoPlayer.isFullScreen()) {
@@ -534,8 +535,9 @@ public class TxVideoPlayerController
     protected void hideChangeBrightness() {
         mChangeBrightness.setVisibility(View.GONE);
     }
+
+    public interface OnStartListener {
+        void call();
+    }
 }
 
-interface OnStartListener {
-    void call();
-}

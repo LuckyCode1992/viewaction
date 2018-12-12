@@ -2,6 +2,7 @@ package com.justcode.hxl.videoplayer
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,9 @@ class VideoAdapter(var context: Context, var list: MutableList<String>) : Recycl
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHoder {
         var holder = MyViewHoder(LayoutInflater.from(context).inflate(R.layout.item_video, parent, false))
         controller = TxVideoPlayerController(context)
+        with(holder.itemView){
+            view_player.setController(controller)
+        }
         return holder
     }
 
@@ -25,7 +29,6 @@ class VideoAdapter(var context: Context, var list: MutableList<String>) : Recycl
     override fun onBindViewHolder(holder: MyViewHoder, position: Int) {
         with(holder.itemView) {
             controller?.let {
-                view_player.setController(it)
                 it.setTitle("demo")
             }
 
@@ -36,12 +39,12 @@ class VideoAdapter(var context: Context, var list: MutableList<String>) : Recycl
             view_player.setLayoutParams(params)
 
             view_player.setUp(list[position], null)
-
-            controller?.setOnStartListener {
-                itemClick.invoke(position)
-            }
-
         }
+        controller?.setOnStartListener {
+            Log.d("controller_position:",""+position)
+            itemClick.invoke(position)
+        }
+        controller
     }
 
 }

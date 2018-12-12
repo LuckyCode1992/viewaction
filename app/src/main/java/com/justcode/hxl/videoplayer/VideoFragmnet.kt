@@ -40,15 +40,9 @@ class VideoFragmnet : Fragment() {
         list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/04/2017-04-28_18-20-56.mp4")
         list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/04/2017-04-26_10-06-25.mp4")
         list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/04/2017-04-21_16-41-07.mp4")
-        list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/04/2017-04-21_16-41-07.mp4")
-        list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/05/2017-05-03_13-02-41.mp4")
-        list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/04/2017-04-28_18-20-56.mp4")
-        list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/05/2017-05-17_17-33-30.mp4")
-        list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/05/2017-05-10_10-20-26.mp4")
-        list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/04/2017-04-26_10-06-25.mp4")
-        list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/04/2017-04-21_16-41-07.mp4")
-        list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/04/2017-04-21_16-41-07.mp4")
-        list.add("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/05/2017-05-03_13-02-41.mp4")
+        list.add("https://city.fuwugongshe.com:8083/video/fmfw.mp4")
+
+
         val adapter = VideoAdapter(context!!, list)
         recycleview.adapter = adapter
 
@@ -70,6 +64,7 @@ class VideoFragmnet : Fragment() {
                     val firstItemPosition = linearManager.findFirstVisibleItemPosition()
                     //获取可见view的总数
                     val visibleItemCount = linearManager.childCount
+                    Log.d("currentPosition:", "currentPosition" + ":" + currentPosition+" firstItemPosition:"+firstItemPosition+" lastItemPosition:"+lastItemPosition)
                     if (currentPosition < firstItemPosition || currentPosition > lastItemPosition) {
                         NiceVideoPlayerManager.instance().releaseNiceVideoPlayer()
                     }
