@@ -4,11 +4,15 @@ import android.Manifest
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Toast
 import com.justcode.hxl.Android和JS交互.WebViewActivity
 import com.justcode.hxl.activity_animatoo.AnimatooActivity
 import com.justcode.hxl.chelaile.CheLaileActivity
 import com.justcode.hxl.imagescale.ImageScaleActivity
+import com.justcode.hxl.lucky_recycleview.smartrefresh.layout.SmartRefreshLayout
+import com.justcode.hxl.lucky_recycleview.smartrefresh.layout.footer.ClassicsFooter
+import com.justcode.hxl.luckyrecycleview.LoadingHeader
 import com.justcode.hxl.maputil.MapUtilActivity
 import com.justcode.hxl.permission.RxPermissions
 import com.justcode.hxl.videoplayer.VideoPlayerActivity
@@ -146,6 +150,8 @@ class MainActivity : AppCompatActivity() {
             intent.setClass(this, VideoPlayerActivity::class.java)
             startActivity(intent)
         }
+
+
     }
 
 }

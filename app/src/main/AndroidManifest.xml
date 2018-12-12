@@ -116,6 +116,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="在fragment中使用"
             android:screenOrientation="portrait" />
+        <activity android:name="com.justcode.hxl.luckyrecycleview.RecycleViewActivity"></activity>
     </application>
 
 </manifest>
