@@ -41,4 +41,5 @@ dependencies {
     implementation project(':chelaile')
     implementation project(':photoutil_libary')
     implementation project(':video_player')
+    implementation project(':lucky_recycleview')
 }

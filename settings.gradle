@@ -1,1 +1,1 @@
-include ':app',':photoviewer', ':floatwindow', ':permission', ':tools', ':chelaile', ':video_player','animatoolib','photoutil_libary'
+include ':app',':photoviewer', ':floatwindow', ':permission', ':tools', ':chelaile', ':video_player', ':lucky_recycleview','animatoolib','photoutil_libary'
