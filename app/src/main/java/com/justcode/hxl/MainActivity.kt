@@ -13,6 +13,7 @@ import com.justcode.hxl.imagescale.ImageScaleActivity
 import com.justcode.hxl.lucky_recycleview.smartrefresh.layout.SmartRefreshLayout
 import com.justcode.hxl.lucky_recycleview.smartrefresh.layout.footer.ClassicsFooter
 import com.justcode.hxl.luckyrecycleview.LoadingHeader
+import com.justcode.hxl.luckyrecycleview.RecycleViewActivity
 import com.justcode.hxl.maputil.MapUtilActivity
 import com.justcode.hxl.permission.RxPermissions
 import com.justcode.hxl.videoplayer.VideoPlayerActivity
@@ -148,6 +149,11 @@ class MainActivity : AppCompatActivity() {
         tv_activity_video.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, VideoPlayerActivity::class.java)
+            startActivity(intent)
+        }
+        tv_activity_recycle.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, RecycleViewActivity::class.java)
             startActivity(intent)
         }
 
