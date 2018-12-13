@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.justcode.hxl.luckyrecycleview.RecycleViewActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <com.justcode.hxl.lucky_recycleview.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/reflush_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.justcode.hxl.lucky_recycleview.luckycycleview.LuckyRecycleLayout
+            android:id="@+id/lucky_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.justcode.hxl.lucky_recycleview.luckycycleview.LuckyRecycleLayout>
+
+    </com.justcode.hxl.lucky_recycleview.smartrefresh.layout.SmartRefreshLayout>
+
+</RelativeLayout>

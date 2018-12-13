@@ -157,6 +157,13 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="视频播放" />
+            <TextView
+                android:id="@+id/tv_activity_recycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="封装的recycleview" />
         </LinearLayout>
 
     </ScrollView>
