@@ -116,7 +116,9 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="在fragment中使用"
             android:screenOrientation="portrait" />
-        <activity android:name="com.justcode.hxl.luckyrecycleview.RecycleViewActivity"></activity>
+        <activity android:name="com.justcode.hxl.luckyrecycleview.RecycleViewActivity" />
+        <activity android:name="com.justcode.hxl.stack_card.StackCardActivity" />
+        <activity android:name="com.justcode.hxl.stack_card.CardDetialActivity"></activity>
     </application>
 
 </manifest>

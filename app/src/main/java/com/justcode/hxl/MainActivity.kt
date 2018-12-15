@@ -16,6 +16,7 @@ import com.justcode.hxl.luckyrecycleview.LoadingHeader
 import com.justcode.hxl.luckyrecycleview.RecycleViewActivity
 import com.justcode.hxl.maputil.MapUtilActivity
 import com.justcode.hxl.permission.RxPermissions
+import com.justcode.hxl.stack_card.StackCardActivity
 import com.justcode.hxl.videoplayer.VideoPlayerActivity
 import com.justcode.hxl.viewaction.R
 import com.justcode.hxl.viewaction.acticitychange.Change1Activity
@@ -154,6 +155,11 @@ class MainActivity : AppCompatActivity() {
         tv_activity_recycle.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, RecycleViewActivity::class.java)
+            startActivity(intent)
+        }
+        tv_activity_stack_card.setOnClickListener{
+            var intent = Intent()
+            intent.setClass(this, StackCardActivity::class.java)
             startActivity(intent)
         }
 
