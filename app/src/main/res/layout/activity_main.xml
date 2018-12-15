@@ -164,6 +164,13 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="封装的recycleview" />
+            <TextView
+                android:id="@+id/tv_activity_stack_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="折叠卡片" />
         </LinearLayout>
 
     </ScrollView>

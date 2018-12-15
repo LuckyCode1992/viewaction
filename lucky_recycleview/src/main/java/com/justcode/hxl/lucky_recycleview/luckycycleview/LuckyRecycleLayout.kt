@@ -21,6 +21,7 @@ class LuckyRecycleLayout : FrameLayout {
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
     val adapter: MultiTypeAdapter = MultiTypeAdapter()
+    var recyclerView: RecyclerView? = null
     private val allItemList = mutableListOf<Any>()
     var emptyView: View? = null
         set(value) {
@@ -35,7 +36,8 @@ class LuckyRecycleLayout : FrameLayout {
 
     override fun onFinishInflate() {
         super.onFinishInflate()
-        LayoutInflater.from(context).inflate(R.layout.recycleview_layout, this, true)
+        val view = LayoutInflater.from(context).inflate(R.layout.recycleview_layout, this, true)
+        recyclerView = view.findViewById(R.id.recycleview)
         recycleview.layoutManager = LinearLayoutManager(context)
         emptyView = defaultEmptyLayoutCreator?.invoke()
     }

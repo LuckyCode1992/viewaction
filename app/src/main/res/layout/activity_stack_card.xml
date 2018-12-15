@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.justcode.hxl.stack_card.StackCardActivity">
+    <com.justcode.hxl.lucky_recycleview.luckycycleview.LuckyRecycleLayout
+        android:id="@+id/lucky_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.justcode.hxl.lucky_recycleview.luckycycleview.LuckyRecycleLayout>
+
+</RelativeLayout>
