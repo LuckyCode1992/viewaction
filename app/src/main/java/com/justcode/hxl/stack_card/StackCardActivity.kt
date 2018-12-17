@@ -49,7 +49,7 @@ class StackCardActivity : AppCompatActivity() {
             intent.putExtra("title", item.title)
             intent.putExtra("logo", item.logo)
             intent.putExtra("background", item.background)
-            startActivity(Intent(), compat.toBundle())
+            startActivity(intent, compat.toBundle())
         }
         val cardItem1 = CardItem(R.drawable.ic_bitcoin,R.drawable.bitcoin_background,"bitcoin")
         val cardItem2 = CardItem(R.drawable.ic_ethereum,R.drawable.ethereum_background,"ethereum")
