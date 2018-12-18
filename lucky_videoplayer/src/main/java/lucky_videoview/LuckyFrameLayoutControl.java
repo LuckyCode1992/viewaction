@@ -65,8 +65,9 @@ public class LuckyFrameLayoutControl extends LuckyFrameLayout {
     public static int LAST_GET_BATTERYLEVEL_PERCENT = 70;
 
     OnItemClick onItemClick;
-    public void setOnitemClick( OnItemClick onItemClick0){
-     onItemClick = onItemClick0;
+
+    public void setOnitemClick(OnItemClick onItemClick0) {
+        onItemClick = onItemClick0;
     }
 
     private BroadcastReceiver battertReceiver = new BroadcastReceiver() {
@@ -263,7 +264,8 @@ public class LuckyFrameLayoutControl extends LuckyFrameLayout {
     @Override
     public void onClick(View v) {
         super.onClick(v);
-        onItemClick.call();
+        if (onItemClick != null)
+            onItemClick.call();
         int i = v.getId();
         if (i == R.id.thumb) {
             if (luckyDataSource == null || luckyDataSource.urlsMap.isEmpty() || luckyDataSource.getCurrentUrl() == null) {
@@ -835,9 +837,10 @@ public class LuckyFrameLayoutControl extends LuckyFrameLayout {
         }
     }
 
-    public interface OnItemClick{
+    public interface OnItemClick {
         void call();
     }
+
     public class DismissControlViewTimerTask extends TimerTask {
 
         @Override
