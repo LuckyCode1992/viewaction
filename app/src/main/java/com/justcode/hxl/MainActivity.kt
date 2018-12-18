@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
 import com.justcode.hxl.Android和JS交互.WebViewActivity
+import com.justcode.hxl.CoordinatorLayout折叠式布局.CoordinatorLayoutActivity
 import com.justcode.hxl.activity_animatoo.AnimatooActivity
 import com.justcode.hxl.chelaile.CheLaileActivity
 import com.justcode.hxl.imagescale.ImageScaleActivity
@@ -168,6 +169,12 @@ class MainActivity : AppCompatActivity() {
             intent.setClass(this, DrawerLayoutActivity::class.java)
             startActivity(intent)
         }
+        tv_activity_coordinator.setOnClickListener{
+            var intent = Intent()
+            intent.setClass(this, CoordinatorLayoutActivity::class.java)
+            startActivity(intent)
+        }
+
 
     }
 
