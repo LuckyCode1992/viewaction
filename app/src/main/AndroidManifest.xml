@@ -118,7 +118,8 @@
             android:screenOrientation="portrait" />
         <activity android:name="com.justcode.hxl.luckyrecycleview.RecycleViewActivity" />
         <activity android:name="com.justcode.hxl.stack_card.StackCardActivity" />
-        <activity android:name="com.justcode.hxl.stack_card.CardDetialActivity"></activity>
+        <activity android:name="com.justcode.hxl.stack_card.CardDetialActivity" />
+        <activity android:name="com.justcode.hxl.官方侧滑菜单DrawerLayout.DrawerLayoutActivity"></activity>
     </application>
 
 </manifest>
