@@ -3,7 +3,6 @@ package com.justcode.hxl.videoplayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import com.justcode.hxl.video_player.NiceVideoPlayerManager
 import com.justcode.hxl.viewaction.R
 import kotlinx.android.synthetic.main.activity_video_player.*
 
@@ -59,7 +58,6 @@ class VideoPlayerActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (NiceVideoPlayerManager.instance().onBackPressd()) return
         super.onBackPressed()
     }
 }

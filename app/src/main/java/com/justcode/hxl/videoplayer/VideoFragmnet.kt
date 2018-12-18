@@ -7,11 +7,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.justcode.hxl.video_player.NiceVideoPlayerManager
+
 
 import com.justcode.hxl.viewaction.R
 import kotlinx.android.synthetic.main.fragment_video.*
-import com.wanglu.photoviewerlibrary.photoview.PhotoViewAttacher.CURRENT_STATE
 import android.support.v7.widget.RecyclerView
 
 
@@ -66,7 +65,7 @@ class VideoFragmnet : Fragment() {
                     val visibleItemCount = linearManager.childCount
                     Log.d("currentPosition:", "currentPosition" + ":" + currentPosition+" firstItemPosition:"+firstItemPosition+" lastItemPosition:"+lastItemPosition)
                     if (currentPosition < firstItemPosition || currentPosition > lastItemPosition) {
-                        NiceVideoPlayerManager.instance().releaseNiceVideoPlayer()
+                        //释放资源
                     }
 
                 }
@@ -78,12 +77,12 @@ class VideoFragmnet : Fragment() {
         super.onHiddenChanged(hidden)
         Log.d("onHiddenChanged", text + ":" + hidden)
         if (hidden) {
-            NiceVideoPlayerManager.instance().releaseNiceVideoPlayer()
+            //释放资源
         }
     }
 
     override fun onStop() {
         super.onStop()
-        NiceVideoPlayerManager.instance().releaseNiceVideoPlayer()
+       //释放资源
     }
 }
