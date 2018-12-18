@@ -45,5 +45,5 @@ dependencies {
     implementation project(':photoutil_libary')
     implementation project(':lucky_recycleview')
     implementation project(':stack_card')
-//    implementation project(':lucky_videoview')
+//    implementation project(':lucky_videoplayer')
 }
