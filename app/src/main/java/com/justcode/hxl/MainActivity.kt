@@ -27,6 +27,7 @@ import com.justcode.hxl.viewaction.remoteview.NotifyActivity
 import com.justcode.hxl.viewaction.viewdonghua.ViewDonghuaActivity
 import com.justcode.hxl.二维码条形码验证码.QR_BAR_V_CODE_Activity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
+import com.justcode.hxl.官方侧滑菜单DrawerLayout.DrawerLayoutActivity
 import com.justcode.hxl.悬浮窗.WindowActivity
 import com.justcode.hxl.权限问题.PermissionsActivity
 import com.justcode.hxl.点赞.GiveALikeActivity
@@ -162,7 +163,11 @@ class MainActivity : AppCompatActivity() {
             intent.setClass(this, StackCardActivity::class.java)
             startActivity(intent)
         }
-
+        tv_activity_drawerlayout.setOnClickListener{
+            var intent = Intent()
+            intent.setClass(this, DrawerLayoutActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

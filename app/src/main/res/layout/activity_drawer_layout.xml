@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.justcode.hxl.官方侧滑菜单DrawerLayout.DrawerLayoutActivity">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/fl_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4672F6">
+            <TextView
+                android:text="456465456456+4545+646+4+65+6446++65654564564"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_left"
+            android:tag="rl_left"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:background="#466666">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_right"
+            android:tag="rl_right"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="#5666aa">
+
+        </RelativeLayout>
+    </android.support.v4.widget.DrawerLayout>
+
+    <Button
+        android:id="@+id/btn_open_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开左边" />
+
+    <Button
+        android:id="@+id/btn_close_left"
+        android:layout_below="@+id/btn_open_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关闭左边" />
+
+    <Button
+        android:id="@+id/btn_open_right"
+        android:layout_below="@+id/btn_close_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开右边" />
+
+    <Button
+        android:id="@+id/btn_close_right"
+        android:layout_below="@+id/btn_open_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关闭右边" />
+    <Button
+        android:id="@+id/btn_has_shadow"
+        android:layout_below="@+id/btn_close_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开阴影" />
+    <Button
+        android:id="@+id/btn_no_shadow"
+        android:layout_below="@+id/btn_has_shadow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关闭阴影" />
+    <Button
+        android:id="@+id/btn_has_extrusion"
+        android:layout_below="@+id/btn_no_shadow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开挤压" />
+    <Button
+        android:id="@+id/btn_no_extrusion"
+        android:layout_below="@+id/btn_has_extrusion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关闭挤压" />
+
+</RelativeLayout>
