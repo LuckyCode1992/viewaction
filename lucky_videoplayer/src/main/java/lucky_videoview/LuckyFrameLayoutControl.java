@@ -64,6 +64,11 @@ public class LuckyFrameLayoutControl extends LuckyFrameLayout {
     public static long LAST_GET_BATTERYLEVEL_TIME = 0;
     public static int LAST_GET_BATTERYLEVEL_PERCENT = 70;
 
+    OnItemClick onItemClick;
+    public void setOnitemClick( OnItemClick onItemClick0){
+     onItemClick = onItemClick0;
+    }
+
     private BroadcastReceiver battertReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
@@ -258,6 +263,7 @@ public class LuckyFrameLayoutControl extends LuckyFrameLayout {
     @Override
     public void onClick(View v) {
         super.onClick(v);
+        onItemClick.call();
         int i = v.getId();
         if (i == R.id.thumb) {
             if (luckyDataSource == null || luckyDataSource.urlsMap.isEmpty() || luckyDataSource.getCurrentUrl() == null) {
@@ -352,17 +358,28 @@ public class LuckyFrameLayoutControl extends LuckyFrameLayout {
         super.showWifiDialog();
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setMessage(getResources().getString(R.string.tips_not_wifi));
-        builder.setPositiveButton(getResources().getString(R.string.tips_not_wifi_confirm), (dialog, which) -> {
-            dialog.dismiss();
-            onEvent(LuckyUserActionStd.ON_CLICK_START_WIFIDIALOG);
-            startVideo();
-            WIFI_TIP_DIALOG_SHOWED = true;
+        builder.setPositiveButton(getResources().getString(R.string.tips_not_wifi_confirm), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                onEvent(LuckyUserActionStd.ON_CLICK_START_WIFIDIALOG);
+                startVideo();
+                WIFI_TIP_DIALOG_SHOWED = true;
+            }
         });
-        builder.setNegativeButton(getResources().getString(R.string.tips_not_wifi_cancel), (dialog, which) -> {
-            dialog.dismiss();
-            clearFloatScreen();
+        builder.setNegativeButton(getResources().getString(R.string.tips_not_wifi_cancel), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                clearFloatScreen();
+            }
         });
-        builder.setOnCancelListener(DialogInterface::dismiss);
+        builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                dialog.dismiss();
+            }
+        });
         builder.create().show();
     }
 
@@ -800,20 +817,27 @@ public class LuckyFrameLayoutControl extends LuckyFrameLayout {
         if (currentState != CURRENT_STATE_NORMAL
                 && currentState != CURRENT_STATE_ERROR
                 && currentState != CURRENT_STATE_AUTO_COMPLETE) {
-            post(() -> {
-                bottomContainer.setVisibility(View.INVISIBLE);
-                topContainer.setVisibility(View.INVISIBLE);
-                startButton.setVisibility(View.INVISIBLE);
-                if (clarityPopWindow != null) {
-                    clarityPopWindow.dismiss();
-                }
-                if (currentScreen != SCREEN_WINDOW_TINY) {
-                    bottomProgressBar.setVisibility(View.VISIBLE);
+            post(new Runnable() {
+                @Override
+                public void run() {
+                    bottomContainer.setVisibility(View.INVISIBLE);
+                    topContainer.setVisibility(View.INVISIBLE);
+                    startButton.setVisibility(View.INVISIBLE);
+                    if (clarityPopWindow != null) {
+                        clarityPopWindow.dismiss();
+                    }
+                    if (currentScreen != SCREEN_WINDOW_TINY) {
+                        bottomProgressBar.setVisibility(View.VISIBLE);
+                    }
                 }
             });
+
         }
     }
 
+    public interface OnItemClick{
+        void call();
+    }
     public class DismissControlViewTimerTask extends TimerTask {
 
         @Override

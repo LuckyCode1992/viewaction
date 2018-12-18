@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import com.justcode.hxl.viewaction.R
 import kotlinx.android.synthetic.main.activity_video_player.*
+import lucky_videoview.LuckyFrameLayout
 
 class VideoPlayerActivity : AppCompatActivity() {
     private var showingFragment: Fragment? = null
@@ -58,6 +59,14 @@ class VideoPlayerActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
+        if (LuckyFrameLayout.backPress()) {
+            return
+        }
         super.onBackPressed()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        LuckyFrameLayout.releaseAllVideos()
     }
 }

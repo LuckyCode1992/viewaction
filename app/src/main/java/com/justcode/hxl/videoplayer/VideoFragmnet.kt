@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import com.justcode.hxl.viewaction.R
 import kotlinx.android.synthetic.main.fragment_video.*
 import android.support.v7.widget.RecyclerView
+import lucky_videoview.LuckyFrameLayout
 
 
 class VideoFragmnet : Fragment() {
@@ -66,6 +67,7 @@ class VideoFragmnet : Fragment() {
                     Log.d("currentPosition:", "currentPosition" + ":" + currentPosition+" firstItemPosition:"+firstItemPosition+" lastItemPosition:"+lastItemPosition)
                     if (currentPosition < firstItemPosition || currentPosition > lastItemPosition) {
                         //释放资源
+                        LuckyFrameLayout.releaseAllVideos()
                     }
 
                 }
@@ -78,11 +80,13 @@ class VideoFragmnet : Fragment() {
         Log.d("onHiddenChanged", text + ":" + hidden)
         if (hidden) {
             //释放资源
+            LuckyFrameLayout.releaseAllVideos()
         }
     }
 
     override fun onStop() {
         super.onStop()
        //释放资源
+        LuckyFrameLayout.releaseAllVideos()
     }
 }
