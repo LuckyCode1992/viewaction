@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 import java.net.URL;
 import java.net.URLConnection;
 
+import static java.lang.Math.PI;
 import static java.lang.Math.atan2;
 import static java.lang.Math.cos;
 import static java.lang.Math.sin;
@@ -24,8 +25,10 @@ public class TransUtil {
     static BigDecimal pi = new BigDecimal("3.1415926535897932384626");
     // 长半轴
     static BigDecimal a = new BigDecimal("6378245");
+    static double aDouble = 6378245.0;
     // 扁率
     static BigDecimal ee = new BigDecimal("0.00669342162296594323");
+    static double eeDouble = 0.00669342162296594323;
     static BigDecimal b_1 = new BigDecimal("-1");
     static BigDecimal b_2 = new BigDecimal("10");
     static BigDecimal b_3 = new BigDecimal("2");
@@ -43,6 +46,62 @@ public class TransUtil {
     static BigDecimal b_14 = new BigDecimal("0.006");
 
 
+    public static double[] gps2Baidu(double lat, double lng) {
+        double[] latlng = null;
+
+        URL url = null;
+        URLConnection connection = null;
+        try {
+            url = new URL("http://api.map.baidu.com/ag/coord/convert?from=0&to=4&x=" + String.valueOf(lat) + "&y="
+                    + String.valueOf(lng));
+            connection = url.openConnection();
+            connection.setConnectTimeout(1000);
+            connection.setReadTimeout(1000);
+            connection.setDoOutput(true);
+            OutputStreamWriter out = new OutputStreamWriter(connection.getOutputStream(), "utf-8");
+            out.flush();
+            out.close();
+
+            // 服务器的回应的字串，并解析
+            String sCurrentLine;
+            String sTotalString;
+            sCurrentLine = "";
+            sTotalString = "";
+            InputStream l_urlStream;
+            l_urlStream = connection.getInputStream();
+            BufferedReader l_reader = new BufferedReader(new InputStreamReader(l_urlStream));
+            while ((sCurrentLine = l_reader.readLine()) != null) {
+                if (!sCurrentLine.equals(""))
+                    sTotalString += sCurrentLine;
+            }
+            // System.out.println(sTotalString);
+            sTotalString = sTotalString.substring(1, sTotalString.length() - 1);
+            // System.out.println(sTotalString);
+            String[] results = sTotalString.split("\\,");
+            if (results.length == 3) {
+                if (results[0].split("\\:")[1].equals("0")) {
+                    String mapX = results[1].split("\\:")[1];
+                    String mapY = results[2].split("\\:")[1];
+                    mapX = mapX.substring(1, mapX.length() - 1);
+                    mapY = mapY.substring(1, mapY.length() - 1);
+                    mapX = new String(Base64.decode(mapX, Base64.DEFAULT));
+                    mapY = new String(Base64.decode(mapY, Base64.DEFAULT));
+                    // System.out.println(mapX);
+                    // System.out.println(mapY);
+                    latlng = new double[]{Double.parseDouble(mapX), Double.parseDouble(mapY)};
+                } else {
+                    System.out.println("error != 0");
+                }
+            } else {
+                System.out.println("String invalid!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("GPS转百度坐标异常！");
+        }
+        Log.d("MapUtil", "百度GPS==" + latlng[0] + " " + latlng[1]);
+        return latlng;
+    }
 
     private static double x_pi = 3.14159265358979324 * 3000.0 / 180.0;
 
@@ -55,8 +114,11 @@ public class TransUtil {
      * @return 保留小数位后的数
      */
     static double dataDigit(int digit, double in) {
-        return new BigDecimal(in).setScale(6, BigDecimal.ROUND_HALF_UP).doubleValue();
+        return new BigDecimal(in).setScale(digit, BigDecimal.ROUND_HALF_UP).doubleValue();
 
+    }
+    static double dataDigit(double in){
+        return new BigDecimal(in).setScale(6, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 
     /**
@@ -118,7 +180,6 @@ public class TransUtil {
     }
 
 
-
     /**
      * 火星坐标系(GCJ-02)转百度坐标系(BD-09)
      *
@@ -161,7 +222,7 @@ public class TransUtil {
         dlng = (dlng.multiply(b_10)).divide((a.divide(sqrtmagic, B_DIV_SCALE, BigDecimal.ROUND_HALF_UP).multiply(new BigDecimal(Math.cos(radlat.doubleValue())).multiply(pi))), B_DIV_SCALE, BigDecimal.ROUND_HALF_UP);
         BigDecimal mglat = b_lat.add(dlat);
         BigDecimal mglng = b_lng.add(dlng);
-        return new double[]{mglng.doubleValue(), mglat.doubleValue()};
+        return new double[]{dataDigit(mglng.doubleValue()), dataDigit(mglat.doubleValue())};
     }
 
     /**
@@ -205,6 +266,50 @@ public class TransUtil {
         bet = bet.add((b_9.multiply(new BigDecimal(Math.sin(lng.divide(b_3.multiply(b_3).multiply(b_5), B_DIV_SCALE, BigDecimal.ROUND_HALF_UP).multiply(pi).doubleValue())))
                 .add(b_9.multiply(b_3).multiply(new BigDecimal(Math.sin(lng.divide(b_5.multiply(b_2), B_DIV_SCALE, BigDecimal.ROUND_HALF_UP).multiply(pi).doubleValue())))).multiply(b_3).divide(b_5, B_DIV_SCALE, BigDecimal.ROUND_HALF_UP)));
         return bet;
+    }
+
+    /**
+     * * 火星坐标系 (GCJ-02) to 84 * * @param lon * @param lat * @return
+     */
+    public static double[] gcj02_To_Gps84(double lon, double lat) {
+        double[] gps = transform(lat, lon);
+        double lontitude = lon * 2 - gps[1];
+        double latitude = lat * 2 - gps[0];
+        return new double[]{dataDigit(lontitude), dataDigit(latitude)};
+    }
+
+    public static double[] transform(double lat, double lon) {
+
+        double dLat = transformLat(lon - 105.0, lat - 35.0);
+        double dLon = transformLon(lon - 105.0, lat - 35.0);
+        double radLat = lat / 180.0 * PI;
+        double magic = Math.sin(radLat);
+        magic = 1 - eeDouble* magic * magic;
+        double sqrtMagic = Math.sqrt(magic);
+        dLat = (dLat * 180.0) / ((aDouble * (1 - eeDouble)) / (magic * sqrtMagic) * PI);
+        dLon = (dLon * 180.0) / (aDouble / sqrtMagic * Math.cos(radLat) * PI);
+        double mgLat = lat + dLat;
+        double mgLon = lon + dLon;
+        return new double[]{mgLat, mgLon};
+    }
+
+    public static double transformLat(double x, double y) {
+        double ret = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y
+                + 0.2 * Math.sqrt(Math.abs(x));
+        ret += (20.0 * Math.sin(6.0 * x * PI) + 20.0 * Math.sin(2.0 * x * PI)) * 2.0 / 3.0;
+        ret += (20.0 * Math.sin(y * PI) + 40.0 * Math.sin(y / 3.0 * PI)) * 2.0 / 3.0;
+        ret += (160.0 * Math.sin(y / 12.0 * PI) + 320 * Math.sin(y * PI / 30.0)) * 2.0 / 3.0;
+        return ret;
+    }
+
+    public static double transformLon(double x, double y) {
+        double ret = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1
+                * Math.sqrt(Math.abs(x));
+        ret += (20.0 * Math.sin(6.0 * x * PI) + 20.0 * Math.sin(2.0 * x * PI)) * 2.0 / 3.0;
+        ret += (20.0 * Math.sin(x * PI) + 40.0 * Math.sin(x / 3.0 * PI)) * 2.0 / 3.0;
+        ret += (150.0 * Math.sin(x / 12.0 * PI) + 300.0 * Math.sin(x / 30.0
+                * PI)) * 2.0 / 3.0;
+        return ret;
     }
 
 }
