@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="15dp"
+    tools:context="com.justcode.hxl.InputPwdActivity">
+
+    <com.justcode.hxl.tools.keyboard_pwd.PayPwdEditText
+        android:id="@+id/input_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp">
+
+    </com.justcode.hxl.tools.keyboard_pwd.PayPwdEditText>
+
+    <include
+        layout="@layout/include_keyboardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

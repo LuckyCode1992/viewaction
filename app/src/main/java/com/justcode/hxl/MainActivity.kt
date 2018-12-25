@@ -159,22 +159,26 @@ class MainActivity : AppCompatActivity() {
             intent.setClass(this, RecycleViewActivity::class.java)
             startActivity(intent)
         }
-        tv_activity_stack_card.setOnClickListener{
+        tv_activity_stack_card.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, StackCardActivity::class.java)
             startActivity(intent)
         }
-        tv_activity_drawerlayout.setOnClickListener{
+        tv_activity_drawerlayout.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, DrawerLayoutActivity::class.java)
             startActivity(intent)
         }
-        tv_activity_coordinator.setOnClickListener{
+        tv_activity_coordinator.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, CoordinatorLayoutActivity::class.java)
             startActivity(intent)
         }
-
+        tv_activity_input_pwd.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, InputPwdActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

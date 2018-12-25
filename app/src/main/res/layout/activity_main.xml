@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="15dp"
     tools:context="com.justcode.hxl.MainActivity">
 
     <ScrollView
@@ -77,6 +78,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="js和Android交互" />
+
             <TextView
                 android:id="@+id/tv_xuanfuchuang"
                 android:layout_width="match_parent"
@@ -84,6 +86,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="悬浮窗" />
+
             <TextView
                 android:id="@+id/tv_premissions"
                 android:layout_width="match_parent"
@@ -91,6 +94,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="权限问题" />
+
             <TextView
                 android:id="@+id/tv_codes"
                 android:layout_width="match_parent"
@@ -98,6 +102,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="二维码，条形码，验证码" />
+
             <TextView
                 android:id="@+id/tv_scale_image"
                 android:layout_width="match_parent"
@@ -105,6 +110,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="图片缩放" />
+
             <TextView
                 android:id="@+id/tv_device_info"
                 android:layout_width="match_parent"
@@ -120,6 +126,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="进度条" />
+
             <TextView
                 android:id="@+id/tv_give_a_like"
                 android:layout_width="match_parent"
@@ -127,6 +134,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="点赞" />
+
             <TextView
                 android:id="@+id/tv_maputil"
                 android:layout_width="match_parent"
@@ -150,6 +158,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="车来了" />
+
             <TextView
                 android:id="@+id/tv_activity_video"
                 android:layout_width="match_parent"
@@ -157,6 +166,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="视频播放" />
+
             <TextView
                 android:id="@+id/tv_activity_recycle"
                 android:layout_width="match_parent"
@@ -164,6 +174,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="封装的recycleview" />
+
             <TextView
                 android:id="@+id/tv_activity_stack_card"
                 android:layout_width="match_parent"
@@ -171,6 +182,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="折叠卡片" />
+
             <TextView
                 android:id="@+id/tv_activity_drawerlayout"
                 android:layout_width="match_parent"
@@ -178,6 +190,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="侧滑菜单" />
+
             <TextView
                 android:id="@+id/tv_activity_coordinator"
                 android:layout_width="match_parent"
@@ -185,6 +198,14 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="coordinatorlayout" />
+
+            <TextView
+                android:id="@+id/tv_activity_input_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="仿支付宝支付" />
         </LinearLayout>
 
     </ScrollView>
