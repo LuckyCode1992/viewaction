@@ -116,12 +116,25 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="在fragment中使用"
             android:screenOrientation="portrait" />
-        <activity android:name="com.justcode.hxl.luckyrecycleview.RecycleViewActivity"  android:screenOrientation="portrait"/>
-        <activity android:name="com.justcode.hxl.stack_card.StackCardActivity"  android:screenOrientation="portrait"/>
-        <activity android:name="com.justcode.hxl.stack_card.CardDetialActivity"  android:screenOrientation="portrait"/>
-        <activity android:name="com.justcode.hxl.官方侧滑菜单DrawerLayout.DrawerLayoutActivity" android:screenOrientation="portrait"/>
-        <activity android:name="com.justcode.hxl.CoordinatorLayout折叠式布局.CoordinatorLayoutActivity"  android:screenOrientation="portrait"/>
-        <activity android:name="com.justcode.hxl.InputPwdActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.justcode.hxl.luckyrecycleview.RecycleViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.justcode.hxl.stack_card.StackCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.justcode.hxl.stack_card.CardDetialActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.justcode.hxl.官方侧滑菜单DrawerLayout.DrawerLayoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.justcode.hxl.CoordinatorLayout折叠式布局.CoordinatorLayoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.justcode.hxl.InputPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.justcode.hxl.网络状态和声音.NetWorkAndVoiceActivity"></activity>
     </application>
 
 </manifest>

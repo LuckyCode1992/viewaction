@@ -32,6 +32,7 @@ import com.justcode.hxl.官方侧滑菜单DrawerLayout.DrawerLayoutActivity
 import com.justcode.hxl.悬浮窗.WindowActivity
 import com.justcode.hxl.权限问题.PermissionsActivity
 import com.justcode.hxl.点赞.GiveALikeActivity
+import com.justcode.hxl.网络状态和声音.NetWorkAndVoiceActivity
 import com.justcode.hxl.设备信息和工具.DeviceActivity
 import com.justcode.hxl.进度条.ProgressActivity
 
@@ -177,6 +178,12 @@ class MainActivity : AppCompatActivity() {
         tv_activity_input_pwd.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, InputPwdActivity::class.java)
+            startActivity(intent)
+        }
+
+        tv_activity_network_voice.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, NetWorkAndVoiceActivity::class.java)
             startActivity(intent)
         }
 

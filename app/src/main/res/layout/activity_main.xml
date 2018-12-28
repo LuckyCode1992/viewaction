@@ -206,6 +206,14 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="仿支付宝支付" />
+
+            <TextView
+                android:id="@+id/tv_activity_network_voice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="获取网络和声音信息" />
         </LinearLayout>
 
     </ScrollView>
