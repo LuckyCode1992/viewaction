@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import com.justcode.hxl.Android和JS交互.WebViewActivity
 import com.justcode.hxl.CoordinatorLayout折叠式布局.CoordinatorLayoutActivity
+import com.justcode.hxl.StepperView.StepperViewActivity
 import com.justcode.hxl.activity_animatoo.AnimatooActivity
 import com.justcode.hxl.chelaile.CheLaileActivity
 import com.justcode.hxl.imagescale.ImageScaleActivity
@@ -187,6 +188,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        tv_activity_stepper_view.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, StepperViewActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }

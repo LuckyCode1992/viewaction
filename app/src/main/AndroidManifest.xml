@@ -134,7 +134,12 @@
         <activity
             android:name="com.justcode.hxl.InputPwdActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.justcode.hxl.网络状态和声音.NetWorkAndVoiceActivity"></activity>
+        <activity
+            android:name="com.justcode.hxl.网络状态和声音.NetWorkAndVoiceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.justcode.hxl.StepperView.StepperViewActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

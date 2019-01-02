@@ -214,6 +214,13 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="获取网络和声音信息" />
+            <TextView
+                android:id="@+id/tv_activity_stepper_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="步骤效果" />
         </LinearLayout>
 
     </ScrollView>
