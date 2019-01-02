@@ -1,4 +1,4 @@
-package moe.feng.common.stepperview;
+package stepperview;
 
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;

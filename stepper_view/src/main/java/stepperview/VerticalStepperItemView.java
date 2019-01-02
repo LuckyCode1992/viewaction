@@ -1,4 +1,4 @@
-package moe.feng.common.stepperview;
+package stepperview;
 
 import android.animation.LayoutTransition;
 import android.animation.ValueAnimator;
@@ -21,6 +21,8 @@ import android.widget.TextView;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+
+import moe.feng.common.stepperview.R;
 
 public class VerticalStepperItemView extends FrameLayout {
 

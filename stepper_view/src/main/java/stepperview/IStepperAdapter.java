@@ -1,4 +1,4 @@
-package moe.feng.common.stepperview;
+package stepperview;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

@@ -1,4 +1,4 @@
-package moe.feng.common.stepperview.internal;
+package stepperview.internal;
 
 import android.content.Context;
 import android.graphics.Canvas;

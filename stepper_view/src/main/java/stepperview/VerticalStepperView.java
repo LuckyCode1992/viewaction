@@ -1,4 +1,4 @@
-package moe.feng.common.stepperview;
+package stepperview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -12,7 +12,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import moe.feng.common.stepperview.internal.VerticalSpaceItemDecoration;
+
+import moe.feng.common.stepperview.R;
+import stepperview.internal.VerticalSpaceItemDecoration;
 
 public class VerticalStepperView extends FrameLayout implements IStepperView {
 

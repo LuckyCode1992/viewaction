@@ -20,7 +20,7 @@
 
 
 			<!-- Stepper Point -->
-			<moe.feng.common.stepperview.internal.ClipOvalFrameLayout
+			<stepperview.internal.ClipOvalFrameLayout
 					android:id="@+id/stepper_point_frame"
 					android:layout_width="@dimen/stepper_point_size"
 					android:layout_height="@dimen/stepper_point_size"
@@ -52,7 +52,7 @@
 						android:src="@drawable/ic_done_white_16dp"
 						android:importantForAccessibility="no"/>
 
-			</moe.feng.common.stepperview.internal.ClipOvalFrameLayout>
+			</stepperview.internal.ClipOvalFrameLayout>
 
 			<ImageView
 					android:id="@+id/stepper_error_icon"
