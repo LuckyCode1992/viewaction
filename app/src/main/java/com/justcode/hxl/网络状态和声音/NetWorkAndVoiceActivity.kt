@@ -3,6 +3,7 @@ package com.justcode.hxl.网络状态和声音
 import android.media.AudioManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.justcode.hxl.tools.NetWork.MemoryUtil
 import com.justcode.hxl.tools.NetWork.NetWorkUtil
 import com.justcode.hxl.tools.voice.VoiceUtil
 import com.justcode.hxl.viewaction.R
@@ -21,7 +22,10 @@ class NetWorkAndVoiceActivity : AppCompatActivity() {
             })
         }
         btn2.setOnClickListener {
-            tv2.text =  "多媒体音量："+voiceUtil.getCurrentVolume(VoiceUtil.AudioMangerTag.VOICE_MEDIA)
+            tv2.text = "多媒体音量：" + voiceUtil.getCurrentVolume(VoiceUtil.AudioMangerTag.VOICE_MEDIA)
+        }
+        btn3.setOnClickListener {
+            tv3.text = "内存使用率：" + MemoryUtil.getMemory(this)
         }
     }
 }
