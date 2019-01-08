@@ -28,18 +28,13 @@ class NotifyActivity : AppCompatActivity() {
         tv.setOnClickListener {
             initNotify()
         }
-        tv1.setOnClickListener {
-            initRemoteView()
-        }
+
 
     }
 
     var builder: Notification.Builder? = null
     var notificationManager: NotificationManager? = null
-    private fun initRemoteView() {
 
-
-    }
 
 
     fun initNotify() {
@@ -48,20 +43,19 @@ class NotifyActivity : AppCompatActivity() {
 
         notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-
         val isOpened = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             notificationManager!!.areNotificationsEnabled()
         } else {
             true
         }
-        if (!isOpened) {
+        if (!isOpened){
             // 根据isOpened结果，判断是否需要提醒用户跳转AppInfo页面，去打开App通知权限
-            val intent = Intent()
+            val intent =  Intent()
             intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
             val uri = Uri.fromParts("package", application.packageName, null)
-            intent.data = uri
+            intent.data = uri;
             startActivity(intent)
-            return
+           return
         }
 
 
