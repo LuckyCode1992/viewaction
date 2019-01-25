@@ -19,53 +19,53 @@ class CheLaileAdapter(var context: Context, var list: MutableList<Data>) : Recyc
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-        with(holder.itemView) {
-
-            list[position]?.let {
-                tv_name.text = it.name
-                tv_number.text = (position + 1).toString()
-                if(it.isLocation!!){
-                   iv_location.visibility = View.VISIBLE
-                }else{
-                    iv_location.visibility = View.GONE
-                }
-                if(it.isBigCar!!){
-                    iv_big_car.visibility = View.VISIBLE
-                }else{
-                    iv_big_car.visibility = View.GONE
-                }
-                if(it.isSmallCar!!){
-                    iv_small_car.visibility = View.VISIBLE
-                }else{
-                    iv_small_car.visibility = View.GONE
-                }
-
-                if(it.isStart!!|| it.isEnd!!){
-                    iv_icon.visibility = View.VISIBLE
-                    tv_number.visibility = View.GONE
-                }else{
-                    iv_icon.visibility = View.GONE
-                    tv_number.visibility = View.VISIBLE
-                }
-                if(it.isStart!!){
-                    iv_icon.setImageResource(R.drawable.kaishi)
-
-                    iv_left.visibility = View.GONE
-                    iv_right.visibility = View.GONE
-                }else{
-
-                    iv_left.visibility = View.VISIBLE
-                    iv_right.visibility=View.GONE
-                }
-                if(it.isEnd!!){
-                    iv_icon.setImageResource(R.drawable.zhongdian)
-                }
-                tv_name.setOnClickListener {
-                    itemClick?.invoke(position)
-                }
-
-            }
-        }
+//        with(holder.itemView) {
+//
+//            list[position]?.let {
+//                tv_name.text = it.name
+//                tv_number.text = (position + 1).toString()
+//                if(it.isLocation!!){
+//                   iv_location.visibility = View.VISIBLE
+//                }else{
+//                    iv_location.visibility = View.GONE
+//                }
+//                if(it.isBigCar!!){
+//                    iv_big_car.visibility = View.VISIBLE
+//                }else{
+//                    iv_big_car.visibility = View.GONE
+//                }
+//                if(it.isSmallCar!!){
+//                    iv_small_car.visibility = View.VISIBLE
+//                }else{
+//                    iv_small_car.visibility = View.GONE
+//                }
+//
+//                if(it.isStart!!|| it.isEnd!!){
+//                    iv_icon.visibility = View.VISIBLE
+//                    tv_number.visibility = View.GONE
+//                }else{
+//                    iv_icon.visibility = View.GONE
+//                    tv_number.visibility = View.VISIBLE
+//                }
+//                if(it.isStart!!){
+//                    iv_icon.setImageResource(R.drawable.kaishi)
+//
+//                    iv_left.visibility = View.GONE
+//                    iv_right.visibility = View.GONE
+//                }else{
+//
+//                    iv_left.visibility = View.VISIBLE
+//                    iv_right.visibility=View.GONE
+//                }
+//                if(it.isEnd!!){
+//                    iv_icon.setImageResource(R.drawable.zhongdian)
+//                }
+//                tv_name.setOnClickListener {
+//                    itemClick?.invoke(position)
+//                }
+//
+//            }
+//        }
     }
     fun update(list0: MutableList<Data>){
         list = list0

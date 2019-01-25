@@ -36,4 +36,5 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     api 'me.drakeet.multitype:multitype-kotlin:3.4.4'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
