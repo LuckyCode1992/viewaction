@@ -52,4 +52,5 @@ dependencies {
     implementation project(':stack_card')
     implementation project(':lucky_videoplayer')
     implementation project(':stepper_view')
+    implementation project(':alibabaxiala')
 }

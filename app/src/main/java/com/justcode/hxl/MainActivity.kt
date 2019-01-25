@@ -29,6 +29,7 @@ import com.justcode.hxl.viewaction.remoteview.NotifyActivity
 import com.justcode.hxl.viewaction.viewdonghua.ViewDonghuaActivity
 import com.justcode.hxl.二维码条形码验证码.QR_BAR_V_CODE_Activity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
+import com.justcode.hxl.仿阿里巴巴下拉刷新.AlibabaActivity
 import com.justcode.hxl.官方侧滑菜单DrawerLayout.DrawerLayoutActivity
 import com.justcode.hxl.悬浮窗.WindowActivity
 import com.justcode.hxl.权限问题.PermissionsActivity
@@ -191,6 +192,11 @@ class MainActivity : AppCompatActivity() {
         tv_activity_stepper_view.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, StepperViewActivity::class.java)
+            startActivity(intent)
+        }
+        tv_activity_alibaba_xiala.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, AlibabaActivity::class.java)
             startActivity(intent)
         }
     }

@@ -221,6 +221,13 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="步骤效果" />
+            <TextView
+                android:id="@+id/tv_activity_alibaba_xiala"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="仿阿里巴巴下拉" />
         </LinearLayout>
 
     </ScrollView>
