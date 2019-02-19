@@ -26,6 +26,7 @@ import com.justcode.hxl.viewaction.acticitychange.ChangeHomeActivity
 import com.justcode.hxl.viewaction.path.gouwuche.GouwucheActivity
 import com.justcode.hxl.viewaction.path.taoxin.TaoxinActivity
 import com.justcode.hxl.viewaction.remoteview.NotifyActivity
+import com.justcode.hxl.viewaction.shuxingdonghua.Main2Activity
 import com.justcode.hxl.viewaction.viewdonghua.ViewDonghuaActivity
 import com.justcode.hxl.二维码条形码验证码.QR_BAR_V_CODE_Activity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
@@ -83,6 +84,11 @@ class MainActivity : AppCompatActivity() {
         tv_changeacticity2.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, ChangeHomeActivity::class.java)
+            startActivity(intent)
+        }
+        tv_shuxingdonghua.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, Main2Activity::class.java)
             startActivity(intent)
         }
         tv_webview.setOnClickListener {

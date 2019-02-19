@@ -6,12 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".shuxingdonghua.Main2Activity">
 
+    <!--<RelativeLayout-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp">-->
+        <!--<ImageView-->
+            <!--android:id="@+id/iv"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:src="@drawable/kefu_2_pdf" />-->
+    <!--</RelativeLayout>-->
+
     <ImageView
         android:id="@+id/iv"
-       android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:src="@drawable/kefu_2_pdf" />
+
+
 
     <HorizontalScrollView
 
@@ -66,16 +80,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="移动加渐显" />
+
             <Button
                 android:id="@+id/yidongjiaxuanzhuan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="移动加放大缩小加旋转" />
+
             <Button
                 android:id="@+id/yidongjiafangdasuoxiao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="先移动再缩放" />
+
             <Button
                 android:id="@+id/zzhouxuanzhuan"
                 android:layout_width="wrap_content"
