@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.justcode.hxl.Android和JS交互.WebViewActivity">
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"></RelativeLayout>
 
     <WebView
         android:id="@+id/webview"
