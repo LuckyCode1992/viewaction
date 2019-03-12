@@ -47,7 +47,7 @@ public class UpdateUtils {
             public void onStart() {
                 if (listener != null)
                     listener.onStart();
-                HProgressDialogUtils.showHorizontalProgressDialog((Activity) context, "下载进度", false);
+                //HProgressDialogUtils.showHorizontalProgressDialog((Activity) context, "下载进度", false);
                 Log.d("UpdateUtils", "onStart() called");
             }
 
@@ -55,7 +55,7 @@ public class UpdateUtils {
             public void onProgress(float progress, long totalSize) {
                 if (listener != null)
                 listener.onProgress(progress, totalSize);
-                HProgressDialogUtils.setProgress(Math.round(progress * 100));
+                //HProgressDialogUtils.setProgress(Math.round(progress * 100));
                 Log.d("UpdateUtils", "onProgress() called with: progress = [" + progress + "], totalSize = [" + totalSize + "]");
 
             }
@@ -71,7 +71,7 @@ public class UpdateUtils {
             public boolean onFinish(File file) {
                 if (listener != null)
                     listener.onFinish(file);
-                HProgressDialogUtils.cancel();
+                //HProgressDialogUtils.cancel();
                 Log.d("UpdateUtils", "onFinish() called with: file = [" + file.getAbsolutePath() + "]");
                 return true;
             }

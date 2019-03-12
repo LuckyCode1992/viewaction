@@ -53,7 +53,7 @@ class NotifyActivity : AppCompatActivity() {
             val intent =  Intent()
             intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
             val uri = Uri.fromParts("package", application.packageName, null)
-            intent.data = uri;
+            intent.data = uri
             startActivity(intent)
            return
         }
