@@ -30,7 +30,7 @@ class UpdateAppActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_app)
 
-        var notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val isOpened = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             notificationManager!!.areNotificationsEnabled()
         } else {
