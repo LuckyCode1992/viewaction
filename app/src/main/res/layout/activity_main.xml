@@ -236,6 +236,14 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="仿阿里巴巴下拉" />
+
+            <TextView
+                android:id="@+id/tv_activity_updateapp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="更新app" />
         </LinearLayout>
 
     </ScrollView>

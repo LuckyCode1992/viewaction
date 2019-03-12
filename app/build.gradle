@@ -51,4 +51,5 @@ dependencies {
     implementation project(':lucky_videoplayer')
     implementation project(':stepper_view')
     implementation project(':alibabaxiala')
+    implementation project('::updateapp')
 }
