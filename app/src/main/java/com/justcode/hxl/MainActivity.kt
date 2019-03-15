@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.widget.Toast
 import com.justcode.hxl.Android和JS交互.WebViewActivity
 import com.justcode.hxl.CoordinatorLayout折叠式布局.CoordinatorLayoutActivity
@@ -12,9 +11,6 @@ import com.justcode.hxl.StepperView.StepperViewActivity
 import com.justcode.hxl.activity_animatoo.AnimatooActivity
 import com.justcode.hxl.chelaile.CheLaileActivity
 import com.justcode.hxl.imagescale.ImageScaleActivity
-import com.justcode.hxl.lucky_recycleview.smartrefresh.layout.SmartRefreshLayout
-import com.justcode.hxl.lucky_recycleview.smartrefresh.layout.footer.ClassicsFooter
-import com.justcode.hxl.luckyrecycleview.LoadingHeader
 import com.justcode.hxl.luckyrecycleview.RecycleViewActivity
 import com.justcode.hxl.maputil.MapUtilActivity
 import com.justcode.hxl.permission.RxPermissions
@@ -30,6 +26,7 @@ import com.justcode.hxl.viewaction.remoteview.NotifyActivity
 import com.justcode.hxl.viewaction.shuxingdonghua.Main2Activity
 import com.justcode.hxl.viewaction.viewdonghua.ViewDonghuaActivity
 import com.justcode.hxl.二维码条形码验证码.QR_BAR_V_CODE_Activity
+import com.justcode.hxl.jiaohuxiaoguo1.Jiaohu1Activity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
 import com.justcode.hxl.仿阿里巴巴下拉刷新.AlibabaActivity
 import com.justcode.hxl.官方侧滑菜单DrawerLayout.DrawerLayoutActivity
@@ -209,6 +206,11 @@ class MainActivity : AppCompatActivity() {
         tv_activity_updateapp.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, UpdateAppActivity::class.java)
+            startActivity(intent)
+        }
+        tv_activity_jiaohu1.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, Jiaohu1Activity::class.java)
             startActivity(intent)
         }
     }

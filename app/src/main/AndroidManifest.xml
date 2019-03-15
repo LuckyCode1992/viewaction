@@ -23,7 +23,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.justcode.hxl.updateapp.UpdateAppActivity"></activity>
+        <activity android:name="com.justcode.hxl.jiaohuxiaoguo1.Jiaohu1Activity"></activity>
+        <activity android:name="com.justcode.hxl.updateapp.UpdateAppActivity" />
         <activity
             android:name="com.justcode.hxl.MainActivity"
             android:screenOrientation="portrait">
