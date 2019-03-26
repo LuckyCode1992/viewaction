@@ -3,7 +3,7 @@
     <string name="content_step_0">This is the first step. Click OK button to next step.\n\nTest Message.</string>
     <string name="content_step_1">This is the second step. Click OK button to next step or Cancel button to previous step.\n\nThe summary text of each step is optional. If you haven\'t set, summary view won\'t be displayed.</string>
     <string name="content_step_2">This is the last step. You can finish steps now.</string>
-    
+
     <string name="HeaderBehavior">com.justcode.hxl.jiaohuxiaoguo1.behavior.HeaderBehavior</string>
     <string name="SearchBehavior">com.justcode.hxl.jiaohuxiaoguo1.behavior.SearchBehavior</string>
     <string name="ContentBehavior">com.justcode.hxl.jiaohuxiaoguo1.behavior.ContentBehavior</string>

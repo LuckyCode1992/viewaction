@@ -14,12 +14,57 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <RelativeLayout
+            <LinearLayout
+                android:layout_marginTop="?attr/actionBarSize"
                 android:layout_width="match_parent"
-                android:background="#123456"
+                android:orientation="vertical"
                 android:layout_height="@dimen/behavior_height">
 
-            </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#999999"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#888888"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginTop="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_gerenbanshi"
+                        android:text="个人办事"
+                        android:paddingLeft="16dp"
+                        android:textSize="20sp"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_toRightOf="@+id/tv_gerenbanshi"
+                        android:layout_alignBottom="@+id/tv_gerenbanshi"
+                        android:layout_marginLeft="16dp"
+                        android:text="法人办事"
+                        android:paddingLeft="16dp"
+                        android:textSize="16sp"
+                        android:textColor="#999999"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
         </FrameLayout>
     </android.support.v4.widget.NestedScrollView>

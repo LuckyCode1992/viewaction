@@ -29,6 +29,7 @@ import com.justcode.hxl.二维码条形码验证码.QR_BAR_V_CODE_Activity
 import com.justcode.hxl.jiaohuxiaoguo1.Jiaohu1Activity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
 import com.justcode.hxl.仿阿里巴巴下拉刷新.AlibabaActivity
+import com.justcode.hxl.圆角.RoundActivity
 import com.justcode.hxl.官方侧滑菜单DrawerLayout.DrawerLayoutActivity
 import com.justcode.hxl.悬浮窗.WindowActivity
 import com.justcode.hxl.权限问题.PermissionsActivity
@@ -211,6 +212,11 @@ class MainActivity : AppCompatActivity() {
         tv_activity_jiaohu1.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, Jiaohu1Activity::class.java)
+            startActivity(intent)
+        }
+        tv_activity_round.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, RoundActivity::class.java)
             startActivity(intent)
         }
     }

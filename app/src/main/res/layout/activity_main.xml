@@ -252,6 +252,13 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="交互效果1" />
+            <TextView
+                android:id="@+id/tv_activity_round"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="圆角" />
         </LinearLayout>
 
     </ScrollView>

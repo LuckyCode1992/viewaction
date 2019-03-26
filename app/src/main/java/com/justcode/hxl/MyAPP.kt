@@ -1,7 +1,9 @@
 package com.justcode.hxl
 
+import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.app.Application
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
@@ -16,7 +18,11 @@ import java.util.*
 
 class MyAPP : Application() {
     companion object {
+        @SuppressLint("StaticFieldLeak")
         var myApp: MyAPP? = null
+        @SuppressLint("StaticFieldLeak")
+        lateinit var context: Context
+
     }
 
     var list: MutableList<ShortcutInfo> = ArrayList()
@@ -25,9 +31,10 @@ class MyAPP : Application() {
     override fun onCreate() {
         super.onCreate()
         myApp = this
-    //    shortcutManager = getSystemService(ShortcutManager::class.java)
+        context = this
+        //    shortcutManager = getSystemService(ShortcutManager::class.java)
 
-       // setShortcutInfo()
+        // setShortcutInfo()
     }
 
     @TargetApi(Build.VERSION_CODES.N_MR1)
@@ -49,9 +56,9 @@ class MyAPP : Application() {
                     intent.setClass(this, OntouchActivity::class.java)
                 }
             }
-            var shortcutInfo = ShortcutInfo.Builder(this,"id"+i)
-                    .setShortLabel("跳转到  "+i)
-                    .setLongLabel("跳转到activity  "+i)
+            var shortcutInfo = ShortcutInfo.Builder(this, "id" + i)
+                    .setShortLabel("跳转到  " + i)
+                    .setLongLabel("跳转到activity  " + i)
                     .setIcon(Icon.createWithResource(this, R.drawable.kefu_2_pdf))
                     .setIntent(intent)
                     .build()
