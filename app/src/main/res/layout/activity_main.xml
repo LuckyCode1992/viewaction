@@ -259,6 +259,11 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="圆角" />
+            <Button
+                android:id="@+id/btn_cycle_menu"
+                android:text="圆环菜单"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </ScrollView>

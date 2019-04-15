@@ -27,6 +27,7 @@ import com.justcode.hxl.viewaction.shuxingdonghua.Main2Activity
 import com.justcode.hxl.viewaction.viewdonghua.ViewDonghuaActivity
 import com.justcode.hxl.二维码条形码验证码.QR_BAR_V_CODE_Activity
 import com.justcode.hxl.jiaohuxiaoguo1.Jiaohu1Activity
+import com.justcode.hxl.zidingyi.CycleMenuActivity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
 import com.justcode.hxl.仿阿里巴巴下拉刷新.AlibabaActivity
 import com.justcode.hxl.圆角.RoundActivity
@@ -217,6 +218,11 @@ class MainActivity : AppCompatActivity() {
         tv_activity_round.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, RoundActivity::class.java)
+            startActivity(intent)
+        }
+        btn_cycle_menu.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, CycleMenuActivity::class.java)
             startActivity(intent)
         }
     }

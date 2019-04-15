@@ -54,4 +54,5 @@ dependencies {
     implementation project(':alibabaxiala')
     implementation project(':updateapp')
     implementation project(':roundlayout')
+    implementation project(':zidingyi')
 }
