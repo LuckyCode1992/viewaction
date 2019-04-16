@@ -3,6 +3,7 @@ package com.justcode.hxl.zidingyi
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.justcode.hxl.zidingyi.animation.roateAnimByObj
 import com.justcode.hxl.zidingyi.animation.rotateAnim
 import kotlinx.android.synthetic.main.cycle_menu.*
 
@@ -32,14 +33,17 @@ class CycleMenuActivity : AppCompatActivity() {
         iv_home.setOnClickListener {
             if (isShowLevel2) {
                 isShowLevel2 = false
-                hideLevel2()
+//                hideLevel2()
+                hideLevel2ByOBJanim()
                 if (isShowLevel3) {
                     isShowLevel3 = false
-                    hideLevel3()
+//                    hideLevel3()
+                    hideLevel3ByOBJanim()
                 }
             } else {
                 isShowLevel2 = true
-                showLevel2()
+//                showLevel2()
+                showLevel2ByOBJanim()
             }
         }
         iv_search.setOnClickListener {
@@ -48,10 +52,12 @@ class CycleMenuActivity : AppCompatActivity() {
         iv_menu.setOnClickListener {
             if (isShowLevel3) {
                 isShowLevel3 = false
-                hideLevel3()
+//                hideLevel3()
+                hideLevel3ByOBJanim()
             } else {
                 isShowLevel3 = true
-                showLevel3()
+//                showLevel3()
+                showLevel3ByOBJanim()
             }
         }
         iv_my.setOnClickListener {
@@ -81,6 +87,24 @@ class CycleMenuActivity : AppCompatActivity() {
 
 
     }
+
+
+    private fun hideLevel2ByOBJanim() {
+        rl_level2.roateAnimByObj(y0 = rl_level2.height * 1f, start = 0f, end = 180f)
+    }
+
+    private fun showLevel2ByOBJanim() {
+        rl_level2.roateAnimByObj(y0 = rl_level2.height * 1f, start = 180f, end = 360f)
+    }
+
+    private fun hideLevel3ByOBJanim() {
+        rl_level3.roateAnimByObj(y0 = rl_level3.height * 1f, start = 0f, end = 180f)
+    }
+
+    private fun showLevel3ByOBJanim() {
+        rl_level3.roateAnimByObj(y0 = rl_level3.height * 1f, start = 180f, end = 360f)
+    }
+
 
     private fun hideLevel2() {
         rl_level2.rotateAnim(180f, 360f, y0 = rl_level2.height * 1f)
