@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_ad.*
 import android.widget.LinearLayout
+import android.widget.Toast
 import com.justcode.hxl.zidingyi.R
 
 
@@ -109,7 +110,14 @@ class AdActivity : AppCompatActivity() {
                             zidong()
                         }
                     }
-                    return@setOnTouchListener true
+                    return@setOnTouchListener false
+                }
+
+                imageView.setTag(realPosition)
+                imageView.setOnClickListener {
+                    val index = imageView.getTag() as Int
+
+                    Toast.makeText(this@AdActivity, "index:" + index, Toast.LENGTH_LONG).show()
                 }
                 return imageView
             }
