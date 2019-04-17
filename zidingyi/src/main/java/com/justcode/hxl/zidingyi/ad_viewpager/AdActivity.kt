@@ -1,11 +1,13 @@
 package com.justcode.hxl.zidingyi.ad_viewpager
 
+import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.view.PagerAdapter
 import android.support.v4.view.ViewPager
 import android.view.Gravity
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -18,7 +20,15 @@ class AdActivity : AppCompatActivity() {
     val imageList = ArrayList<ImageView>()
     val imgList = arrayOf(R.drawable.image1_zdy, R.drawable.image2_zdy, R.drawable.image3__zdy, R.drawable.image4_zdy)
     var currentPoint = 0
+    var currentPointRel = 0
     var handler: Handler? = null
+    var leftOrRight = 1//1是往左滑动，-1是往右滑动
+    val runnable = Runnable {
+        val item = ad_view.currentItem + leftOrRight
+        ad_view.currentItem = item
+        zidong()
+    }
+
     fun dp2px(dpValue: Float): Int {
         val scale = this.getResources().getDisplayMetrics().density
         return (dpValue * scale + 0.5f).toInt()
@@ -73,6 +83,7 @@ class AdActivity : AppCompatActivity() {
              * 创建
              *
              */
+            @SuppressLint("ClickableViewAccessibility")
             override fun instantiateItem(container: ViewGroup, position: Int): Any {
                 //左右无限滚动
                 val realPosition = position % imageList.size
@@ -80,6 +91,26 @@ class AdActivity : AppCompatActivity() {
                 val imageView = imageList[realPosition]
                 //要用add的方式添加view进去
                 container.addView(imageView)
+
+                //按住不动
+                imageView.setOnTouchListener { v, event ->
+                    when (event.action) {
+                        MotionEvent.ACTION_DOWN -> {
+                            handler?.removeCallbacks(runnable)
+                        }
+                        MotionEvent.ACTION_MOVE -> {
+
+                        }
+                        MotionEvent.ACTION_CANCEL -> {
+
+                        }
+                        MotionEvent.ACTION_UP -> {
+                            handler?.removeCallbacks(runnable)
+                            zidong()
+                        }
+                    }
+                    return@setOnTouchListener true
+                }
                 return imageView
             }
 
@@ -114,7 +145,17 @@ class AdActivity : AppCompatActivity() {
              * state
              */
             override fun onPageScrollStateChanged(state: Int) {
+                //拖拽状态
+                if (state == ViewPager.SCROLL_STATE_DRAGGING) {
+                    handler?.removeCallbacks(runnable)
+                    //滑动后自然沉降的状态
+                } else if (state == ViewPager.SCROLL_STATE_SETTLING) {
+                    handler?.removeCallbacks(runnable)
+                    zidong()
+                    //静止状态
+                } else if (state == ViewPager.SCROLL_STATE_IDLE) {
 
+                }
             }
 
             //页面滚动了的时候回掉
@@ -122,6 +163,7 @@ class AdActivity : AppCompatActivity() {
             //positionOffset 滑动的百分比
             //positionOffsetPixels 滑动的像素
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+
             }
 
             /**
@@ -129,6 +171,16 @@ class AdActivity : AppCompatActivity() {
              * position 选中的页面
              */
             override fun onPageSelected(position: Int) {
+                //通过当前位置和滚动后的位置比较是左滑动还是右滑动了
+                if (position >= currentPointRel) {
+                    leftOrRight = 1
+                } else {
+                    leftOrRight = -1
+                }
+
+                currentPointRel = position
+
+
                 //左右无限滚动
                 val realPosition = position % imageList.size
 
@@ -139,13 +191,16 @@ class AdActivity : AppCompatActivity() {
 
         })
 
+        zidong()
+    }
 
-
-
+    fun zidong() {
+        handler?.postDelayed(runnable, 3000)
     }
 
     override fun onDestroy() {
         super.onDestroy()
+        handler?.removeCallbacks(runnable)
 
     }
 }
