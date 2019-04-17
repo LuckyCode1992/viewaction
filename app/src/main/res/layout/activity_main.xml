@@ -264,6 +264,11 @@
                 android:text="圆环菜单"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btn_ad"
+                android:text="轮播广告"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </ScrollView>

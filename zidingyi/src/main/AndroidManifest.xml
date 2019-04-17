@@ -3,7 +3,10 @@
     package="com.justcode.hxl.zidingyi">
 
     <application>
-        <activity android:name=".CycleMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ad_viewpager.AdActivity"></activity>
+        <activity
+            android:name=".CycleMenuActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

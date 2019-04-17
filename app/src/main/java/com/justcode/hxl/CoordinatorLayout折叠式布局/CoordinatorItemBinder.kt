@@ -8,7 +8,7 @@ import java.util.*
 
 class CoordinatorItemBinder : BaseItemBinder<String>() {
 
-    val images = arrayListOf<Int>(R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image5, R.drawable.image6, R.drawable.lucky_img)
+    val images = arrayListOf<Int>(R.drawable.image1_zdy, R.drawable.image2_zdy, R.drawable.image3__zdy, R.drawable.image4_zdy, R.drawable.image5, R.drawable.image6, R.drawable.lucky_img)
     override var layout: Int
         get() = R.layout.item_coordinator
         set(value) {}
