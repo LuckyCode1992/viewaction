@@ -2,6 +2,7 @@ package com.justcode.hxl.zidingyi.ad_viewpager
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.view.PagerAdapter
 import android.support.v4.view.ViewPager
 import android.view.Gravity
@@ -17,6 +18,7 @@ class AdActivity : AppCompatActivity() {
     val imageList = ArrayList<ImageView>()
     val imgList = arrayOf(R.drawable.image1_zdy, R.drawable.image2_zdy, R.drawable.image3__zdy, R.drawable.image4_zdy)
     var currentPoint = 0
+    var handler: Handler? = null
     fun dp2px(dpValue: Float): Int {
         val scale = this.getResources().getDisplayMetrics().density
         return (dpValue * scale + 0.5f).toInt()
@@ -25,6 +27,7 @@ class AdActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ad)
+        handler = Handler()
         imgList.forEach {
             val imageView = ImageView(this)
             imageView.adjustViewBounds = true
@@ -71,14 +74,18 @@ class AdActivity : AppCompatActivity() {
              *
              */
             override fun instantiateItem(container: ViewGroup, position: Int): Any {
-                val imageView = imageList[position]
+                //左右无限滚动
+                val realPosition = position % imageList.size
+
+                val imageView = imageList[realPosition]
                 //要用add的方式添加view进去
                 container.addView(imageView)
                 return imageView
             }
 
             override fun getCount(): Int {
-                return imageList.size
+//                return imageList.size
+                return Int.MAX_VALUE
             }
 
             /**
@@ -90,6 +97,13 @@ class AdActivity : AppCompatActivity() {
                 container.removeView(`object` as View)
             }
         }
+
+        //设置中间位置
+        //这里就是计算出要设置的位置，目的得到一个imageList.size的倍数，只有是这个的倍数才能从第一张开始
+        //这里要配合instantiateItem中的方法思考
+        val item = Int.MAX_VALUE / 2 - Int.MAX_VALUE / 2 % imageList.size
+        ad_view.currentItem = item
+
 
         //viewpager改变监听
         ad_view.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
@@ -115,11 +129,23 @@ class AdActivity : AppCompatActivity() {
              * position 选中的页面
              */
             override fun onPageSelected(position: Int) {
+                //左右无限滚动
+                val realPosition = position % imageList.size
+
                 ll_point.getChildAt(currentPoint).isEnabled = false
-                ll_point.getChildAt(position).isEnabled = true
-                currentPoint = position
+                ll_point.getChildAt(realPosition).isEnabled = true
+                currentPoint = realPosition
             }
 
         })
+
+
+
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
     }
 }
