@@ -1,5 +1,6 @@
 package com.justcode.hxl.zidingyi.myswitch;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -7,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.justcode.hxl.zidingyi.R;
@@ -28,6 +30,11 @@ public class MySwitch extends View {
     private Paint paint;
     private boolean isOpen = false;
 
+    private float startx;
+
+    //点击事件生效，滑动事件不生效 true
+    private boolean isClickEnable = true;
+
     public MySwitch(Context context) {
         super(context);
     }
@@ -43,6 +50,7 @@ public class MySwitch extends View {
         initView();
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void initView() {
         paint = new Paint();
         paint.setAntiAlias(true);
@@ -53,17 +61,65 @@ public class MySwitch extends View {
         this.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!isClickEnable)
+                    return;
                 isOpen = !isOpen;
                 if (isOpen) {
                     slide = slidMax;
-                }else {
+                } else {
                     slide = 0;
                 }
                 //会导致onDraw（）方法执行，强制绘制
                 invalidate();
             }
         });
+
+        this.setOnTouchListener(new OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        isClickEnable = true;
+                        //1.记录按下坐标
+                        //相对自己
+                        startx = event.getX();
+                        //相对屏幕
+                        //startx = event.getRawX();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        isClickEnable = false;
+                        //2.记录结束值
+                        //3.计算偏移量
+                        float endx = event.getX();
+                        float distancex = endx - startx;
+                        slide += distancex;
+                        //4.屏蔽非法值
+                        if (slide < 0) {
+                            slide = 0;
+                        } else if (slide > slidMax) {
+                            slide = slidMax;
+                        }
+                        //5.刷新
+                        invalidate();
+                        //6.数据还原
+                        startx = event.getX();
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        if (slide > slidMax / 2) {
+                            slide = slidMax;
+                        } else {
+                            slide = 0;
+                        }
+                        //5.刷新
+                        invalidate();
+                        break;
+                }
+                return false;
+            }
+        });
     }
+
 
     public MySwitch(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
