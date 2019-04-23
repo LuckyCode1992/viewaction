@@ -30,6 +30,7 @@ import com.justcode.hxl.jiaohuxiaoguo1.Jiaohu1Activity
 import com.justcode.hxl.zidingyi.CycleMenuActivity
 import com.justcode.hxl.zidingyi.ad_viewpager.AdActivity
 import com.justcode.hxl.zidingyi.myswitch.SwitchActivity
+import com.justcode.hxl.zidingyi.zidingyishuxing.ZidingyishuxingActivity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
 import com.justcode.hxl.仿阿里巴巴下拉刷新.AlibabaActivity
 import com.justcode.hxl.圆角.RoundActivity
@@ -235,6 +236,11 @@ class MainActivity : AppCompatActivity() {
         btn_switch.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, SwitchActivity::class.java)
+            startActivity(intent)
+        }
+        btn_zidingyishuxing.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, ZidingyishuxingActivity::class.java)
             startActivity(intent)
         }
     }
