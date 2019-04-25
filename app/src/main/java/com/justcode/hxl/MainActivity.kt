@@ -29,6 +29,7 @@ import com.justcode.hxl.二维码条形码验证码.QR_BAR_V_CODE_Activity
 import com.justcode.hxl.jiaohuxiaoguo1.Jiaohu1Activity
 import com.justcode.hxl.zidingyi.CycleMenuActivity
 import com.justcode.hxl.zidingyi.ad_viewpager.AdActivity
+import com.justcode.hxl.zidingyi.my_viewpager.MyViewPagerActivity
 import com.justcode.hxl.zidingyi.myswitch.SwitchActivity
 import com.justcode.hxl.zidingyi.zidingyishuxing.ZidingyishuxingActivity
 import com.justcode.hxl.仿微信查看照片.PhotoViewerActivity
@@ -241,6 +242,11 @@ class MainActivity : AppCompatActivity() {
         btn_zidingyishuxing.setOnClickListener {
             var intent = Intent()
             intent.setClass(this, ZidingyishuxingActivity::class.java)
+            startActivity(intent)
+        }
+        btn_myviewpager.setOnClickListener {
+            var intent = Intent()
+            intent.setClass(this, MyViewPagerActivity::class.java)
             startActivity(intent)
         }
     }

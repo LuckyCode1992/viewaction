@@ -279,6 +279,11 @@
                 android:text="自定义属性"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btn_myviewpager"
+                android:text="仿原生viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </ScrollView>

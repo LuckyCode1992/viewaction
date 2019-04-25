@@ -3,7 +3,8 @@
     package="com.justcode.hxl.zidingyi">
 
     <application>
-        <activity android:name=".zidingyishuxing.ZidingyishuxingActivity"></activity>
+        <activity android:name=".my_viewpager.MyViewPagerActivity"></activity>
+        <activity android:name=".zidingyishuxing.ZidingyishuxingActivity" />
         <activity android:name=".myswitch.SwitchActivity" />
         <activity android:name=".ad_viewpager.AdActivity" />
         <activity
