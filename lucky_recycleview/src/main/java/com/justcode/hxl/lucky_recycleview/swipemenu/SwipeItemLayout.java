@@ -3,6 +3,7 @@ package com.justcode.hxl.lucky_recycleview.swipemenu;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Rect;
+
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.ViewDragHelper;
